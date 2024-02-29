@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap": "5.3.3",
+    "popper.js": "^2.0.0-next.4"
+  }
+}
