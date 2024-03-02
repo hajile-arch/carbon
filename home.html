@@ -124,14 +124,14 @@
                 style="transform: translate(-50%, -50%)"
               >
                 <div
-                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-3"
+                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-2"
                   style="width: 350px"
                 >
                   <label for="monthlyElectricBill" class="form-label"
                     >What's your monthly electric bill?</label
                   >
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="monthlyElectricBill"
                     placeholder="$"
@@ -146,14 +146,14 @@
                 style="transform: translate(-50%, -50%)"
               >
                 <div
-                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-3"
+                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-2"
                   style="width: 350px"
                 >
                   <label for="monthlyGasBill" class="form-label"
                     >What's your monthly gas bill?</label
                   >
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="monthlyGasBill"
                     placeholder="$"
@@ -168,14 +168,14 @@
                 style="transform: translate(-50%, -50%)"
               >
                 <div
-                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-3"
+                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-2"
                   style="width: 350px"
                 >
                   <label for="monthlyOilBill" class="form-label"
                     >What's your monthly oil bill?</label
                   >
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="monthlyOilBill"
                     placeholder="$"
@@ -189,20 +189,152 @@
                 class="d-flex justify-content-center align-items-center position-absolute top-50 start-50"
                 style="transform: translate(-50%, -50%)"
               >
-                <!-- <div
+                <div
+                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-2"
+                  style="width: 350px"
+                >
+                  <label for="totalMileage" class="form-label"
+                    >What's your total mileage on your car?</label
+                  >
+                  <input type="text" class="form-control" id="totalMileage" />
+                </div>
+              </div>
+            </div>
+            <!-- slide 5 -->
+            <div class="carousel-item h-100 position-relative slide-5">
+              <div
+                class="d-flex justify-content-center align-items-center position-absolute top-50 start-50"
+                style="transform: translate(-50%, -50%)"
+              >
+                <div
+                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-2"
+                  style="width: 350px"
+                >
+                  <label for="totalYear" class="form-label"
+                    >How many years you have own this car?</label
+                  >
+                  <input type="number" class="form-control" id="totalYear" />
+                </div>
+              </div>
+            </div>
+            <!-- slide 6 -->
+            <div class="carousel-item h-100 position-relative slide-6">
+              <div
+                class="d-flex justify-content-center align-items-center position-absolute top-50 start-50"
+                style="transform: translate(-50%, -50%)"
+              >
+                <div
                   class="d-flex flex-column justify-content-center align-items-center gap-3 fs-3"
                   style="width: 350px"
                 >
-                  <label for="monthlyOilBill" class="form-label"
-                    >What's your total yearly mileage on your car?</label
+                  <label for="numberOfFlights" class="form-label"
+                    >What's the number of flights you've taken before?</label
                   >
                   <input
-                    type="email"
+                    type="number"
                     class="form-control"
-                    id="monthlyOilBill"
-                    placeholder="$"
+                    id="numberOfFlights"
                   />
-                </div> -->
+                </div>
+              </div>
+            </div>
+            <!-- slide 7 -->
+            <div class="carousel-item h-100 position-relative slide-7">
+              <div
+                class="d-flex gap-3 justify-content-center align-items-center position-absolute top-50 start-50 fs-4"
+                style="transform: translate(-50%, -50%)"
+              >
+                <label for="recycleNewspaper" class="form-label w-75"
+                  >Do you recycle newspaper?</label
+                >
+                <div class="btn-group w-25" role="group">
+                  <input
+                    type="radio"
+                    class="btn-check btn-lg"
+                    name="btnradio"
+                    id="doRecycleNewspaper"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label
+                    class="btn btn-outline-success"
+                    for="doRecycleNewspaper"
+                    >Yes</label
+                  >
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="btnradio"
+                    id="dontRecycleNewspaper"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-success"
+                    for="dontRecycleNewspaper"
+                    >No</label
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- slide 8 -->
+            <div class="carousel-item h-100 position-relative slide-8">
+              <div
+                class="d-flex justify-content-center align-items-center position-absolute top-50 start-50 fs-5"
+                style="transform: translate(-50%, -50%)"
+              >
+                <label for="recycleAluminiumAndTin" class="form-label w-75"
+                  >Do you recycle aluminium and tin?</label
+                >
+                <div class="btn-group w-25" role="group">
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-outlined"
+                    id="doRecycleAluminiumAndTin"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label
+                    class="btn btn-outline-success"
+                    for="doRecycleAluminiumAndTin"
+                    >Yes</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-outlined"
+                    id="dontRecycleAluminiumAndTin"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-success"
+                    for="dontRecycleAluminiumAndTin"
+                    >No</label
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- slide x -->
+            <div class="carousel-item h-100 position-relative slide-x">
+              <div
+                class="d-flex justify-content-center align-items-center position-absolute top-50 start-50"
+                style="transform: translate(-50%, -50%)"
+              >
+                <div
+                  class="d-flex flex-column justify-content-center align-items-center gap-3 fs-3"
+                  style="width: 350px"
+                >
+                  <img
+                    src="/img/home-bg.png"
+                    alt="home-bg"
+                    width="400px"
+                    style="filter: saturate(115%) hue-rotate(20deg)"
+                  />
+                  <button type="button" class="btn btn-success btn-lg">
+                    Submit
+                  </button>
+                </div>
               </div>
             </div>
           </div>
