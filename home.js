@@ -1,60 +1,112 @@
-function handleButtonClick(button, slideClassName) {
-  const slide = document.querySelector(slideClassName);
-  const progress_bar = document.getElementById("progress-bar");
+let prev_btn_state = "disabled";
+let next_btn_state = "disabled";
+let current_slide = 1;
 
-  switch (true) {
-    case slide.className.includes("slide-1"):
-      prev_button.setAttribute("disabled", true);
-      progress_bar.style.width = "0%";
-      console.log("slide-1");
-      break;
-    case slide.className.includes("slide-2"):
-      prev_button.removeAttribute("disabled");
-      progress_bar.style.width = "12.5%";
-      console.log("slide-2");
-      break;
-    case slide.className.includes("slide-3"):
-      progress_bar.style.width = "25%";
-      console.log("slide-3");
-      break;
-    case slide.className.includes("slide-4"):
-      progress_bar.style.width = "37.5%";
-      console.log("slide-4");
-      break;
-    case slide.className.includes("slide-5"):
-      progress_bar.style.width = "50%";
-      console.log("slide-5");
-      break;
-    case slide.className.includes("slide-6"):
-      progress_bar.style.width = "62.5%";
-      console.log("slide-6");
-      break;
-    case slide.className.includes("slide-7"):
-      progress_bar.style.width = "75%";
-      console.log("slide-7");
-      break;
-    case slide.className.includes("slide-8"):
-      next_button.removeAttribute("disabled");
-      progress_bar.style.width = "87.5%";
-      console.log("slide-8");
-      break;
-    case slide.className.includes("slide-x"):
-      next_button.setAttribute("disabled", true);
-      progress_bar.style.width = "100%";
-      console.log("slide-x");
-      break;
-    default:
-      break;
+function setBtnAttribute() {
+  let prev_btn = document.getElementById("prev-btn");
+  let next_btn = document.getElementById("next-btn");
+  if (prev_btn_state == "disabled") {
+    prev_btn.setAttribute("disabled", "true");
+  } else {
+    prev_btn.removeAttribute("disabled");
+  }
+  if (next_btn_state == "disabled") {
+    next_btn.setAttribute("disabled", "true");
+  } else {
+    next_btn.removeAttribute("disabled");
+  }
+}
+function setBtnState(input) {
+  let slide = document.querySelector(".carousel-item.active");
+  if (input.value == null || input.value.trim() === "") {
+    slide.setAttribute("data-next-btn-state", "disabled");
+  } else {
+    slide.setAttribute("data-next-btn-state", "enabled");
+  }
+  getBtnState(".carousel-item.active");
+}
+
+function setProgress(slide) {
+  let progress_bar = document.getElementById("progress-bar");
+  if (slide) {
+    switch (true) {
+      case slide.className.includes("slide-1"):
+        current_slide = 1;
+        progress_bar.style.width = "0%";
+        break;
+      case slide.className.includes("slide-2"):
+        current_slide = 2;
+        progress_bar.style.width = "14.3%";
+        break;
+      case slide.className.includes("slide-3"):
+        current_slide = 3;
+        progress_bar.style.width = "28.6%";
+        break;
+      case slide.className.includes("slide-4"):
+        current_slide = 4;
+        progress_bar.style.width = "42.9%";
+        break;
+      case slide.className.includes("slide-5"):
+        current_slide = 5;
+        progress_bar.style.width = "57.1%";
+        break;
+      case slide.className.includes("slide-6"):
+        current_slide = 6;
+        progress_bar.style.width = "71.4%";
+        break;
+      case slide.className.includes("slide-7"):
+        current_slide = 7;
+        progress_bar.style.width = "85.7%";
+        break;
+      case slide.className.includes("slide-8"):
+        current_slide = 8;
+        progress_bar.style.width = "100%";
+        break;
+    }
   }
 }
 
-const prev_button = document.getElementById("prev-btn");
-const next_button = document.getElementById("next-btn");
+function getBtnState(active) {
+  let slide = document.querySelector(active);
+  if (slide) {
+    prev_btn_state = slide.getAttribute("data-prev-btn-state");
+    next_btn_state = slide.getAttribute("data-next-btn-state");
+    console.log(prev_btn_state, next_btn_state);
+    setBtnAttribute();
+    setProgress(slide);
+    console.log(current_slide);
+  }
+}
 
-prev_button.addEventListener("click", () => {
-  handleButtonClick(prev_button, ".carousel-item-prev");
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    getBtnState(".carousel-item-prev");
+    setBtnState();
+  } else if (event.key === "ArrowRight") {
+    getBtnState(".carousel-item-next");
+  }
 });
 
-next_button.addEventListener("click", () => {
-  handleButtonClick(next_button, ".carousel-item-next");
-});
+function handleSubmitBtnStyling() {
+  let submit_btn = document.getElementById("submit-btn");
+  if (current_slide == 8) {
+    submit_btn.innerText = "Submit";
+    submit_btn.className = submit_btn.className.replace(
+      "text-black",
+      "btn-success text-white"
+    );
+  } else {
+    submit_btn.innerText = "Next";
+    submit_btn.className = submit_btn.className.replace(
+      "btn-success text-white",
+      "text-black"
+    );
+  }
+}
+
+function handleSubmitBtn() {
+  if (document.querySelector(".slide-8").className.includes("active")) {
+    // TODO: post & clean form on submission
+    alert("submit");
+  }
+}
