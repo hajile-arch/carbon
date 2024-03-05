@@ -157,7 +157,7 @@
                     class="form-control"
                     type="number"
                     placeholder="$"
-                    oninput="getBtnState('.carousel-item.active'); setBtnState(this);"
+                    oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
                   />
                   <div
                     class="invalid-feedback"
@@ -190,7 +190,7 @@
                     class="form-control"
                     type="number"
                     placeholder="$"
-                    oninput="getBtnState('.carousel-item.active'); setBtnState(this);"
+                    oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
                   />
                 </div>
               </div>
@@ -217,7 +217,7 @@
                     class="form-control"
                     type="number"
                     placeholder="$"
-                    oninput="getBtnState('.carousel-item.active'); setBtnState(this);"
+                    oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
                   />
                 </div>
               </div>
@@ -243,8 +243,14 @@
                     id="totalMileage"
                     class="form-control"
                     type="number"
-                    oninput="getBtnState('.carousel-item.active'); setBtnState(this);"
+                    oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this); totalMileageValidation(this)"
                   />
+                  <div
+                    class="invalid-feedback"
+                    style="font-size: 13px; margin-top: -15px"
+                  >
+                    Please enter a valid total mileage.
+                  </div>
                 </div>
               </div>
             </div>
@@ -269,8 +275,15 @@
                     id="totalYear"
                     class="form-control"
                     type="number"
-                    oninput="getBtnState('.carousel-item.active'); setBtnState(this);"
+                    oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this); totalYearValidation(this); yearlyMileageValidation()"
                   />
+                  <div
+                    id="totalYearFeedback"
+                    class="invalid-feedback"
+                    style="font-size: 13px; margin-top: -15px"
+                  >
+                    You must own this car at least a year to have car mileage.
+                  </div>
                 </div>
               </div>
             </div>
@@ -295,7 +308,7 @@
                     id="numberOfFlights"
                     class="form-control"
                     type="number"
-                    oninput="getBtnState('.carousel-item.active'); setBtnState(this);"
+                    oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
                   />
                 </div>
               </div>
@@ -394,7 +407,7 @@
             data-bs-target="#carousel"
             data-bs-slide="prev"
             disabled
-            onclick="getBtnState('.carousel-item-prev'); handleSubmitBtnStyling()"
+            onclick="getBtnState('.carousel-item-prev'); autoFocusCurrentInput(); handleSubmitBtnStyling()"
           >
             <span
               class="carousel-control-prev-icon visually-hidden"
@@ -410,7 +423,7 @@
             data-bs-target="#carousel"
             data-bs-slide="next"
             disabled
-            onclick="getBtnState('.carousel-item-next'); handleSubmitBtnStyling(); handleSubmitBtn()"
+            onclick="getBtnState('.carousel-item-next'); autoFocusCurrentInput(); handleSubmitBtnStyling(); handleSubmitBtn()"
           >
             <span
               class="carousel-control-next-icon visually-hidden"

@@ -74,7 +74,6 @@ function getBtnState(active) {
     console.log(prev_btn_state, next_btn_state);
     setBtnAttribute();
     setProgress(slide);
-    console.log(current_slide);
   }
 }
 
@@ -86,6 +85,15 @@ document.addEventListener("keydown", (event) => {
     getBtnState(".carousel-item-next");
   }
 });
+
+function autoFocusCurrentInput() {
+  setTimeout(() => {
+    const current_input = document.querySelector(".active input");
+    if (current_input.getAttribute("type") == "number") {
+      current_input.focus();
+    }
+  }, 700);
+}
 
 function handleSubmitBtnStyling() {
   let submit_btn = document.getElementById("submit-btn");
@@ -108,5 +116,43 @@ function handleSubmitBtn() {
   if (document.querySelector(".slide-8").className.includes("active")) {
     // TODO: post & clean form on submission
     alert("submit");
+  }
+}
+
+function inputValidation(input) {
+  const validRegex = /^[0-9+\-*/e\s]+$/;
+  if (!validRegex.test(input.value)) {
+    input.value = input.value.replace(/[^0-9+\-*/e\s]/g, "");
+  }
+}
+
+function totalMileageValidation(input) {
+  if (input.value > 999999) {
+    input.value = input.value.slice(0, 6);
+  }
+}
+
+function totalYearValidation(input) {
+  if (input.value > 100) {
+    input.value = input.value.slice(0, -1);
+  }
+}
+
+function yearlyMileageValidation() {
+  const totalMileage = document.getElementById("totalMileage");
+  const totalYear = document.getElementById("totalYear");
+  const slide = document.querySelector(".carousel-item.active");
+  if (
+    totalMileage.value > 0 &&
+    (totalYear.value == 0 || totalYear.value == null)
+  ) {
+    totalYear.className = totalYear.className.replace(
+      "form-control",
+      "form-control is-invalid"
+    );
+    slide.setAttribute("data-next-btn-state", "disabled");
+  } else {
+    totalYear.className = totalYear.className.replace("is-invalid", "");
+    slide.setAttribute("data-next-btn-state", "enabled");
   }
 }
