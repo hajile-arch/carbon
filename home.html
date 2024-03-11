@@ -26,8 +26,11 @@
     <header
       class="d-flex justify-content-between position-fixed w-100 z-1 border"
     >
-      <div class="d-flex justify-content-center align-items-center w-25">
-        <a href="index.html" class="ps-3 pe-1">
+      <a
+        href="index.html"
+        class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
+      >
+        <div class="ps-3 pe-1">
           <img
             src="img/nav/logo.png"
             alt="logo"
@@ -38,9 +41,11 @@
                 brightness(99%) contrast(91%);
             "
           />
-        </a>
-        <h4 class="dropdown-item" style="margin-bottom: 0%">Carbon</h4>
-      </div>
+        </div>
+        <h4 class="dropdown-item text-black mb-0" style="--bs-link-color-rgb: ">
+          Carbon
+        </h4>
+      </a>
 
       <nav class="d-flex gap-3 align-items-center justify-content-between">
         <a
@@ -132,7 +137,7 @@
           style="width: 50%; background-color: white"
         >
           <div class="carousel-inner" style="height: 60dvh">
-            slide 1
+            <!-- slide 1 -->
             <div
               class="carousel-item h-100 position-relative slide-1 active"
               data-prev-btn-state="disabled"
@@ -165,7 +170,7 @@
                 </div>
               </div>
             </div>
-            slide 2
+            <!-- slide 2 -->
             <div
               class="carousel-item h-100 position-relative slide-2"
               data-prev-btn-state="enabled"
@@ -192,7 +197,7 @@
                 </div>
               </div>
             </div>
-            slide 3
+            <!-- slide 3 -->
             <div
               class="carousel-item h-100 position-relative slide-3"
               data-prev-btn-state="enabled"
@@ -219,7 +224,7 @@
                 </div>
               </div>
             </div>
-            slide 4
+            <!-- slide 4 -->
             <div
               class="carousel-item h-100 position-relative slide-4"
               data-prev-btn-state="enabled"
@@ -251,7 +256,7 @@
                 </div>
               </div>
             </div>
-            slide 5
+            <!-- slide 5 -->
             <div
               class="carousel-item h-100 position-relative slide-5"
               data-prev-btn-state="enabled"
@@ -284,7 +289,7 @@
                 </div>
               </div>
             </div>
-            slide 6
+            <!-- slide 6 -->
             <div
               class="carousel-item h-100 position-relative slide-6"
               data-prev-btn-state="enabled"
@@ -310,7 +315,7 @@
                 </div>
               </div>
             </div>
-            slide 7
+            <!-- slide 7 -->
             <div
               class="carousel-item h-100 position-relative slide-7"
               data-prev-btn-state="enabled"
@@ -353,7 +358,7 @@
                 </div>
               </div>
             </div>
-            slide 8
+            <!-- slide 8 -->
             <div
               class="carousel-item h-100 position-relative slide-8"
               data-prev-btn-state="enabled"
@@ -420,7 +425,7 @@
             data-bs-target="#carousel"
             data-bs-slide="next"
             disabled
-            onclick="getBtnState('.carousel-item-next'); autoFocusCurrentInput(); handleSubmitBtnStyling(); handleSubmitBtn()"
+            onclick="getBtnState('.carousel-item-next'); autoFocusCurrentInput(); handleSubmitBtnStyling(); handleSubmitBtn(); validationForEmptyField()"
           >
             <span
               class="carousel-control-next-icon visually-hidden"
@@ -431,7 +436,7 @@
         </form>
       </div>
     </main>
-    <script src="home.js"></script>
+    <script src="script/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
