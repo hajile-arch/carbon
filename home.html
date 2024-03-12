@@ -20,55 +20,56 @@
       href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body style="height: 100dvh">
     <header
       class="d-flex justify-content-between position-fixed w-100 z-1 border"
+      style="height: 70px"
     >
       <a
         href="index.html"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
+        style="margin-left: 10px"
       >
-        <div class="ps-3 pe-1">
+        <div>
           <img
             src="img/nav/logo.png"
             alt="logo"
-            width="100px"
-            height="100px"
+            width="60px"
+            height="60px"
             style="
               filter: invert(38%) sepia(53%) saturate(604%) hue-rotate(100deg)
                 brightness(99%) contrast(91%);
             "
           />
         </div>
-        <h4 class="dropdown-item text-black mb-0" style="--bs-link-color-rgb: ">
-          Carbon
-        </h4>
+        <h4 class="dropdown-item text-black mb-0">Carbon</h4>
       </a>
 
       <nav class="d-flex gap-3 align-items-center justify-content-between">
         <a
           href="home.html"
           class="nav-link"
-          onmouseover="this.style.color='#198754'
-          "
+          onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
           >Home</a
         >
         <a
           href="dashboard.html"
           class="nav-link"
-          onmouseover="this.style.color='#198754'
-        "
+          onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
           >Dashboard</a
         >
         <a
           href="learn.html"
           class="nav-link"
-          onmouseover="this.style.color='#198754'
-        "
+          onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
           >Learn</a
         >
@@ -82,7 +83,7 @@
             onmouseover="this.style.backgroundColor = '#f8f9fa'"
             onmouseleave="this.style.backgroundColor = 'white'"
           >
-            <i class="bi bi-person-fill fs-5"></i>
+            <i class="bi bi-person-fill"></i>
           </button>
           <button
             class="btn dropdown-toggle dropdown-toggle-split"
@@ -95,6 +96,7 @@
           <ul class="dropdown-menu mt-2">
             <a class="dropdown-item" href="#">Setting</a>
             <a class="dropdown-item" href="#">Event</a>
+            <a class="dropdown-item" href="#">Feedback</a>
             <a
               class="dropdown-item"
               onmouseover="this.style.backgroundColor = '#b23b3b'; this.style.color = 'white'"
@@ -135,6 +137,7 @@
           id="carousel"
           class="carousel carousel-dark slide rounded-5 mt-5 border border-5 overflow-hidden shadow needs-validation"
           style="width: 50%; background-color: white"
+          action="home.php"
         >
           <div class="carousel-inner" style="height: 60dvh">
             <!-- slide 1 -->
