@@ -37,7 +37,7 @@
   <body>
     <main id="fullpage">
       <!-- section 1 -->
-      <div class="section">
+      <div id="section-1" class="section">
         <header
           class="d-flex justify-content-between w-100 z-1 position-absolute top-0"
           style="height: 70px"
@@ -93,20 +93,159 @@
               </a>
             </div>
           </div>
-          <img src="img/index/one.svg" alt="one" width="800" height="700" />
+          <img
+            src="img/index/section1.svg"
+            alt="section1"
+            width="800"
+            height="700"
+            style="filter: saturate(1.5) hue-rotate(40deg)"
+          />
         </div>
       </div>
       <!-- section 2 -->
-      <div class="section">
+      <div id="section-2" class="section">
+        <div
+          class="d-flex justify-content-center align-items-center rounded rounded-bottom-5 z-3"
+          style="height: 101dvh"
+        >
+          <img
+            id="section-2-img"
+            src="img/index/section2.svg"
+            alt="section2"
+            width="700"
+            height="600"
+            class="position-absolute"
+            style="left: 0px; transition-duration: 1.5s"
+          />
+          <div
+            id="how-it-works-container"
+            class="d-flex justify-content-end ms-5 ps-5 position-absolute"
+            style="transition-duration: 1s; width: 75%"
+          >
+            <div>
+              <h1 class="display-3 fw-bolder">How it works?</h1>
+              <p
+                id="how-it-works-paragraph"
+                style="margin-left: 150px; transition-duration: 1s"
+              >
+                <a href="learn.html" class="link-secondary">Click here</a>
+                to learn more
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- section 3 -->
+      <div id="section-3" class="section">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center p-5"
+          style="background-color: #2e3138"
+        >
+          <h1
+            id="upcoming-events-title"
+            class="display-3 fw-bolder z-1 text-white"
+            style="
+              font-size: 67px;
+              font-family: quicksand, sans-serif;
+              margin-top: 200px;
+              transition-duration: 1s;
+            "
+          >
+            Upcoming events
+          </h1>
+          <div
+            id="cards"
+            class="d-flex p-5 w-75 gap-3"
+            style="margin-top: 300px; transition-duration: 1s"
+          >
+            <div class="d-flex flex-column gap-3">
+              <!-- card 1 -->
+              <div class="card border-0">
+                <img
+                  src="https://placehold.co/100"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <!-- card 2 -->
+              <div class="card border-0">
+                <img
+                  src="https://placehold.co/100"
+                  class="card-img-top"
+                  width="100px"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="pt-5 d-flex flex-column gap-3">
+              <!-- card 3 -->
+              <div class="card border-0">
+                <img
+                  src="https://placehold.co/100"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <!-- card 4 -->
+              <div class="card border-0">
+                <img
+                  src="https://placehold.co/100"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-4" class="section">
         <div
           class="d-flex justify-content-center align-items-center"
           style="height: 100dvh"
-        ></div>
+        >
+          About us
+        </div>
       </div>
-      <!-- section 3 -->
-      <div class="section">
-        <div style="height: 100dvh; background-color: #f0f2f4"></div>
-      </div>
+      <footer id="section-5" class="section">
+        <div
+          class="d-flex justify-content-center align-items-center"
+          style="height: 100dvh"
+        >
+          Footer
+        </div>
+      </footer>
       <script
         src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js"
         integrity="sha512-yHHLi2ZwgtW9QNVZd0asqMyWGJ6Kx73ijKlGWSi3MwYFB5ZzOJV8wPtopKr6muHk5SERgF3OB/2dZj3StlI34w=="
