@@ -55,7 +55,7 @@
 
     <!-- list -->
     <div class="p-5 border w-100 h-100 d-flex flex-column gap-5">
-        <?php include 'event.php'; ?>
+        <?php include '/api/events.php'; ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

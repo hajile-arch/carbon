@@ -56,7 +56,7 @@ if ($conn->query($sql_create_table) === TRUE) {
         if ($conn->query($sql_insert_event) === TRUE) {
             echo <<<HTML
             <div class="card d-flex flex-row justify-content-center align-items-center rounded border shadow overflow-hidden" style="height: 300px">
-                <img src="$event[image]" class="card-img-top rounded-0 object-fit-cover" alt="event-1" style="width: 40%" />
+                <img src="/img/event/$event[image]" class="card-img-top rounded-0 object-fit-cover" alt="event-1" style="width: 40%" />
                 <div class="card-body p-5">
                     <h5 class="card-title">$event[title]</h5>
                     <p class="card-text text-body-tertiary">
