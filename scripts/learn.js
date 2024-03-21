@@ -19,3 +19,11 @@ function polaroidCardsMouseLeaveAnimation(current_card) {
   img.style.transitionDuration = "0.5s";
   img.style.height = "300px";
 }
+
+function videoOnHoverAnimation(video) {
+  video.className = video.className.replace("rounded", "rounded shadow-lg");
+}
+
+function videoOffHoverAnimation(video) {
+  video.className = video.className.replace("shadow-lg", "");
+}
