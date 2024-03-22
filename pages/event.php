@@ -25,7 +25,7 @@
             rgba(4, 9, 30, 0.3),
             rgba(4, 9, 30, 0.3)
           ),
-          url(/img/event/event-bg.jpg);
+          url(../img/event/event-bg.jpg);
         background-size: cover;
         background-position: center;
       "
@@ -37,13 +37,13 @@
 
     <!-- search bar -->
     <div class="border d-flex justify-content-center">
-      <form action="" class="d-flex gap-3 p-5 w-50">
+      <form action="events.php" method="GET" class="d-flex gap-3 p-5 w-50">
         <div class="input-group">
           <span class="input-group-text" id="basic-addon1"
             ><i class="bi bi-search"></i
           ></span>
           <input
-            type="email"
+            type="text"
             class="form-control"
             id="searchForEvents"
             placeholder="Search for events"
@@ -52,11 +52,11 @@
         <button type="submit" class="btn btn-outline-success">Find</button>
       </form>
     </div>
-
     <!-- list -->
     <div class="p-5 border w-100 h-100 d-flex flex-column gap-5">
         <?php include '../api/events.php'; ?>
     </div>
+    <!-- <script src="../scripts/event.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
