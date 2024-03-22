@@ -6,10 +6,10 @@ $dbname="myweb";
 
 $conn = new mysqli($servername,$username,$password, $dbname);
 
-if($conn->connect_error){
-    die("Connection failed: ".$conn->connect_error);
-}else{
-    echo "Connected successfully";
+if ($conn->connect_error) {
+    die ("<script>console.log('Connection failed: $conn->connect_error')</script>");
+} else {
+    echo "<script>console.log('Connected successfully')</script>";
 }
 
 
@@ -29,7 +29,7 @@ $sql_create_table = "CREATE TABLE IF NOT EXISTS events (
 )";
 
 if ($conn->query($sql_create_table) === TRUE) {
-    echo "Events table created successfully<br>";
+    echo "<script>console.log('Events table created successfully')</script>";
 
     // Insert event data
     $events = array(
@@ -108,11 +108,11 @@ if ($conn->query($sql_create_table) === TRUE) {
             </div>
             HTML;
         } else {
-            echo "Error inserting event data: " . $conn->error;
+            echo "<script>console.log('Error inserting event data: $conn->error')</script>" ;
         }
     }
 } else {
-    echo "Error creating events table: " . $conn->error;
+    echo "<script>console.error('Error creating events table: $conn->error');</script>";
 }
 
 // Close database connection

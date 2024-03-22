@@ -1,4 +1,4 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,7 +39,7 @@ l<!DOCTYPE html>
       <!-- section 1 -->
       <div id="section-1" class="section">
         <header
-          class="d-flex justify-content-between w-100 z-1 position-absolute top-0"
+          class="d-flex justify-content-between w-100 z-1 position-absolute top-0 border"
           style="height: 70px"
         >
           <a
@@ -64,24 +64,27 @@ l<!DOCTYPE html>
           <div class="w-25 d-flex justify-content-end pe-4">
             <div class="d-flex justify-content-center align-items-center">
               <a href="/pages/login.html">
-                <button class="btn btn-dark px-3" style="font-size: 12px">
+                <button
+                  class="btn btn-outline-dark border px-3"
+                  onmouseover="this.className = this.className.replace('border', '')"
+                  onmouseleave="this.className = this.className.replace('btn', 'btn border')"
+                  style="font-size: 12px"
+                >
                   Sign in
                 </button>
               </a>
             </div>
           </div>
         </header>
-        <div class="d-flex justify-content-center align-items-center pe-5">
-          <div class="d-flex justify-content-end align-items-center">
-            <div class="w-75">
-              <h1
-                class="display-3 fw-bolder z-1"
-                style="font-size: 67px; font-family: quicksand, sans-serif"
-              >
-                Track your carbon footprint
-              </h1>
+        <div class="d-flex align-items-end" style="height: 100dvh">
+          <div
+            class="w-50 d-flex justify-content-center align-items-center"
+            style="height: 91.5dvh"
+          >
+            <div class="ps-5 ms-4">
+              <h1 class="display-2">Track your carbon footprint</h1>
               <p class="text-body-tertiary">
-                Sign up to calculate and track your carbon footprint
+                Sign up to calculate your carbon footprint
               </p>
               <a
                 href="/pages/register.html"
@@ -93,13 +96,19 @@ l<!DOCTYPE html>
               </a>
             </div>
           </div>
-          <img
-            src="/img/index/section1.svg"
-            alt="section1"
-            width="800"
-            height="700"
-            style="filter: saturate(1.5) hue-rotate(40deg)"
-          />
+          <div class="w-75" style="height: 91.5dvh">
+            <div
+              class="d-flex justify-content-center align-items-center overflow-hidden h-100 w-100"
+            >
+              <img
+                src="/img/index/section1.svg"
+                class="object-fit-cover"
+                alt="section1"
+                width="800"
+                style="filter: saturate(1.5) hue-rotate(40deg)"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <!-- section 2 -->
@@ -123,12 +132,7 @@ l<!DOCTYPE html>
             style="transition-duration: 1s; width: 75%"
           >
             <div>
-              <h1
-                class="display-3 fw-bolder"
-                style="font-size: 67px; font-family: quicksand, sans-serif"
-              >
-                How it works?
-              </h1>
+              <h1 class="display-1">How it works?</h1>
               <p
                 id="how-it-works-paragraph"
                 style="margin-left: 150px; transition-duration: 1s"
@@ -150,13 +154,8 @@ l<!DOCTYPE html>
         >
           <h1
             id="upcoming-events-title"
-            class="display-3 fw-bolder z-1 text-white"
-            style="
-              font-size: 67px;
-              font-family: quicksand, sans-serif;
-              margin-top: 200px;
-              transition-duration: 1s;
-            "
+            class="display-2 z-1 text-white"
+            style="margin-top: 200px; transition-duration: 1s"
           >
             Upcoming events
           </h1>
