@@ -1,42 +1,30 @@
-// let input = document.getElementById("searchForEvents");
-// let list_of_events = document.getElementsByClassName("card-title");
-// let container = document.getElementById("searchResultsContainer");
+const input = document.getElementById("searchForEvents");
 
-// function search(e) {
-//     e.preventDefault();
-//     container.innerHTML = ""; // Clear previous search results
+function search(e) {
+  e.preventDefault();
 
-//     let titles = [];
-//     for (let i = 0; i < list_of_events.length; i++) {
-//         let title = list_of_events[i].innerText;
-//         if (!titles.includes(title)) {
-//             titles.push(title);
-//         }
-//     }
+  const searchValue = input.value.toLowerCase().trim();
+  const list_of_titles = document.querySelectorAll(".card-title");
 
-//     if (input.value.trim() === "") {
-//         // If input is empty, display all events
-//         for (let i = 0; i < titles.length; i++) {
-//             appendEventToList(titles[i]);
-//         }
-//         return;
-//     }
+  const filtered_list_of_titles = Array.from(list_of_titles)
+    .map((title) => title.innerText.toLowerCase())
+    .filter((title) => title.includes(searchValue));
 
-//     let matchingTitles = titles.filter(title =>
-//         title.toLowerCase().includes(input.value.toLowerCase())
-//     );
-    
-//     if (matchingTitles.length > 0) {
-//         matchingTitles.forEach(title => {
-//             appendEventToList(title);
-//         });
-//     } else {
-//         container.innerHTML = "No matching events found.";
-//     }
-// }
+  const list_of_events = document.querySelectorAll(".event-ctn");
 
-// function appendEventToList(title) {
-//     let eventElement = document.createElement("div");
-//     eventElement.textContent = title;
-//     container.appendChild(eventElement);
-// }
+  for (let i = 0; i < list_of_events.length; i++) {
+    const event = list_of_events[i];
+    const title = event.querySelector(".card-title").innerText.toLowerCase();
+
+    if (filtered_list_of_titles.includes(title)) {
+      event.classList.remove("d-none");
+    } else {
+      event.classList.add("d-none");
+    }
+  }
+}
+
+function setBtnState() {
+  const btn = document.getElementById("find-btn");
+  btn.disabled = input.value.trim() === "";
+}

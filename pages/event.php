@@ -39,9 +39,9 @@
     <div class="border d-flex justify-content-center">
       <form action="events.php" method="GET" class="d-flex gap-3 p-5 w-50">
         <div class="input-group">
-          <span class="input-group-text" id="basic-addon1"
-            ><i class="bi bi-search"></i
-          ></span>
+          <span class="input-group-text" id="basic-addon1">
+            <i class="bi bi-search"></i>
+          </span>
           <input
             type="text"
             class="form-control"
@@ -53,10 +53,10 @@
       </form>
     </div>
     <!-- list -->
-    <div class="p-5 border w-100 h-100 d-flex flex-column gap-5">
+    <div class="p-5 w-100 h-100 d-flex flex-column gap-5">
         <?php include '../api/events.php'; ?>
     </div>
-    <!-- <script src="../scripts/event.js"></script> -->
+    <script src="../scripts/event.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

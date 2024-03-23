@@ -34,28 +34,224 @@
       </h1>
     </div>
 
-    <!-- search bar -->
     <div class="border d-flex justify-content-center">
-      <form action="" class="d-flex gap-3 p-5 w-50">
+      <!-- search bar -->
+      <form class="d-flex gap-3 p-5 w-50" onsubmit="search(event)">
         <div class="input-group">
           <span class="input-group-text" id="basic-addon1"
             ><i class="bi bi-search"></i
           ></span>
           <input
-            type="email"
+            type="text"
             class="form-control"
             id="searchForEvents"
             placeholder="Search for events"
+            oninput="setBtnState()"
           />
         </div>
-        <button type="submit" class="btn btn-outline-success">Find</button>
+        <button
+          id="find-btn"
+          type="submit"
+          class="btn btn-outline-success"
+          disabled
+        >
+          Find
+        </button>
       </form>
+
+      <!-- filter buttons -->
+      <!-- <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-outline-secondary">Ocean</button>
+      </div> -->
     </div>
 
     <!-- list -->
-    <div class="p-5 border w-100 h-100 d-flex flex-column gap-5">
-      <?php include 'dynamic_content.php'; ?>
+    <div class="p-5 w-100 h-100 d-flex flex-column gap-5">
+      <!-- event 1 -->
+      <div
+        class="event-ctn d-flex flex-row justify-content-center align-items-center rounded border shadow overflow-hidden"
+        style="height: 300px"
+      >
+        <img
+          src="../img/event/event-1.jpg"
+          class="card-img-top rounded-0 object-fit-cover"
+          alt="<?php echo $row['image']; ?>"
+          style="width: 40%"
+        />
+        <div class="card-body p-5">
+          <h5 class="card-title">
+            Ocean Guardians Beach Cleanup: Santa Monica Edition
+          </h5>
+          <p class="card-text text-body-tertiary">
+            Date: [date] <br />
+            Time: [time] <br />
+            Location: [location] <br />
+            Organiser: [organiser]
+          </p>
+
+          <div class="d-flex gap-3 pb-4">
+            <div class="border p-1 px-2 rounded"># [categories][0]</div>
+            <div class="border p-1 px-2 rounded"># [categories][1]</div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-1"
+          >
+            See details
+          </button>
+          <div
+            class="modal fade"
+            id="modal-1"
+            tabindex="-1"
+            aria-labelledby="modal-1-label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="inner-card-title">[title]</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body d-flex justify-content-evenly">
+                  <div class="w-50">
+                    <h5 class="fw-semibold">Details</h5>
+                    <p class="card-text fs-6 text-body-secondary">
+                      Date: [date] <br />
+                      Time: [time] <br />
+                      Location: [location] <br />
+                      Organiser: [organiser] <br />
+                      Email: [email] <br />
+                      Phone: [phone_no]
+                    </p>
+                  </div>
+                  <div class="w-50">
+                    <h5 class="fw-semibold">Description</h5>
+                    <p class="card-text fs-6 text-body-secondary">
+                      [description]
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <a href="register.html">
+                    <button type="button" class="btn btn-primary">
+                      Sign Up
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- event 2 -->
+      <div
+        class="event-ctn d-flex flex-row justify-content-center align-items-center rounded border shadow overflow-hidden"
+        style="height: 300px"
+      >
+        <img
+          src="../img/event/event-2.jpg"
+          class="card-img-top rounded-0 object-fit-cover"
+          alt="<?php echo $row['image']; ?>"
+          style="width: 40%"
+        />
+        <div class="card-body p-5">
+          <h5 class="card-title">
+            Sustainable Energy Expo: Harnessing Solar Power
+          </h5>
+          <p class="card-text text-body-tertiary">
+            Date: [date] <br />
+            Time: [time] <br />
+            Location: [location] <br />
+            Organiser: [organiser]
+          </p>
+
+          <div class="d-flex gap-3 pb-4">
+            <div class="border p-1 px-2 rounded"># [categories][0]</div>
+            <div class="border p-1 px-2 rounded"># [categories][1]</div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-2"
+          >
+            See details
+          </button>
+          <div
+            class="modal fade"
+            id="modal-2"
+            tabindex="-1"
+            aria-labelledby="modal-2-label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="inner-card-title">[title]</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body d-flex justify-content-evenly">
+                  <div class="w-50">
+                    <h5 class="fw-semibold">Details</h5>
+                    <p class="card-text fs-6 text-body-secondary">
+                      Date: [date] <br />
+                      Time: [time] <br />
+                      Location: [location] <br />
+                      Organiser: [organiser] <br />
+                      Email: [email] <br />
+                      Phone: [phone_no]
+                    </p>
+                  </div>
+                  <div class="w-50">
+                    <h5 class="fw-semibold">Description</h5>
+                    <p class="card-text fs-6 text-body-secondary">
+                      [description]
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <a href="register.html">
+                    <button type="button" class="btn btn-primary">
+                      Sign Up
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="../scripts/event.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

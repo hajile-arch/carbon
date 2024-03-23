@@ -22,7 +22,7 @@ $result = $conn->query($sql_select_events);
 if ($result->num_rows > 0) {
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
-        echo '<div class="card d-flex flex-row justify-content-center align-items-center rounded border shadow overflow-hidden" style="height: 300px">';
+        echo '<div class="event-ctn card d-flex flex-row justify-content-center align-items-center rounded border shadow overflow-hidden" style="height: 300px">';
         echo '<img src="../img/event/' . $row['image'] . '" class="card-img-top rounded-0 object-fit-cover" alt="'. $row['image'] .'" style="width: 40%" />';
         echo '<div class="card-body p-5">';
         echo '<h5 class="card-title">' . $row['title'] . '</h5>';
@@ -46,12 +46,12 @@ if ($result->num_rows > 0) {
         }
         echo '</div>';
         
-        echo '<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-1">See details</button>';
-        echo '<div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="modal-1-label" aria-hidden="true">';
+        echo '<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-'.$id.'">See details</button>';
+        echo '<div class="modal fade" id="modal-'.$id.'" tabindex="-1" aria-labelledby="modal-'.$id.'-label" aria-hidden="true">';
         echo '<div class="modal-dialog modal-dialog-centered modal-lg">';
         echo '<div class="modal-content">';
         echo '<div class="modal-header">';
-        echo '<h5 class="card-title">' . $row['title'] . '</h5>';
+        echo '<h5 class="inner-card-title">' . $row['title'] . '</h5>';
         echo '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
         echo '</div>';
         echo '<div class="modal-body d-flex justify-content-evenly">';
