@@ -22,9 +22,37 @@ function search(e) {
       event.classList.add("d-none");
     }
   }
+
+  if (searchValue  === "") {
+    list_of_events.forEach(event => {
+      event.classList.remove("d-none");
+    });
+  }
 }
 
-function setBtnState() {
-  const btn = document.getElementById("find-btn");
-  btn.disabled = input.value.trim() === "";
+function handleFilter(btn) {
+  const filteredCategory = btn.innerText.toLowerCase();
+  const list_of_events = document.querySelectorAll(".event-ctn");
+
+  for (let i = 0; i < list_of_events.length; i++) {
+    const list_of_categories = list_of_events[i].querySelectorAll(".categories");
+    let shouldHide = true;
+
+    for (let j = 0; j < list_of_categories.length; j++) {
+      const category = list_of_categories[j].innerText.toLowerCase();
+      if (category.includes(filteredCategory)) {
+        shouldHide = false;
+      }
+    }
+
+    if (shouldHide) {
+      list_of_events[i].classList.add("d-none");
+    } else {
+      list_of_events[i].classList.remove("d-none");
+    }
+  }
 }
+
+
+
+

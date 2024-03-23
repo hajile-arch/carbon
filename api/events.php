@@ -12,9 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle form submission and get search query
-$search_query = isset($_GET['searchForEvents']) ? $_GET['searchForEvents'] : '';
-
 // SQL query to fetch events data
 $sql_select_events = "SELECT * FROM events";
 $result = $conn->query($sql_select_events);
@@ -38,16 +35,16 @@ if ($result->num_rows > 0) {
         
         // Output the first category in the first box
         echo '<div class="d-flex gap-3 pb-4">';
-        echo '<div class="border p-1 px-2 rounded"># ' . $categories[0] . '</div>';
+        echo '<div class="categories border p-1 px-2 rounded"># ' . $categories[0] . '</div>';
         
         // Output the second category in the second box, if exists
         if (isset($categories[1])) {
-            echo '<div class="border p-1 px-2 rounded"># ' . $categories[1] . '</div>';
+            echo '<div class="categories border p-1 px-2 rounded"># ' . $categories[1] . '</div>';
         }
         echo '</div>';
         
-        echo '<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-'.$id.'">See details</button>';
-        echo '<div class="modal fade" id="modal-'.$id.'" tabindex="-1" aria-labelledby="modal-'.$id.'-label" aria-hidden="true">';
+        echo '<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-'.$row['id'].'">See details</button>';
+        echo '<div class="modal fade" id="modal-'.$row['id'].'" tabindex="-1" aria-labelledby="modal-'.$row['id'].'-label" aria-hidden="true">';
         echo '<div class="modal-dialog modal-dialog-centered modal-lg">';
         echo '<div class="modal-content">';
         echo '<div class="modal-header">';
