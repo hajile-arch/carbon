@@ -47,7 +47,6 @@
             class="form-control"
             id="searchForEvents"
             placeholder="Search for events"
-            oninput="setBtnState()"
           />
         </div>
       </form>
@@ -58,7 +57,7 @@
         </button>
         <ul class="dropdown-menu p-0" style="width: 200px">
           <div class="d-flex flex-column align-items-start">
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Environmental Cleanup</button>
+            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this); test()">Environmental Cleanup</button>
             <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Community Service</button>
             <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Renewable Energy</button>
             <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Seminar</button>

@@ -23,18 +23,19 @@ function validateForm() {
   const password = document.getElementById("floatingPassword");
   const confirmPassword = document.getElementById("floatingConfirmPassword");
   const feedback = document.getElementById("floatingConfirmPasswordFeedback");
+
   if (password.value !== confirmPassword.value) {
+    // If passwords don't match, show error message
     feedback.innerHTML = "Please ensure your password match";
     confirmPassword.className = confirmPassword.className.replace(
       "form-control",
       "form-control is-invalid"
     );
   } else {
-    feedback.innerHTML = "Please confirm your password";
-    confirmPassword.className = confirmPassword.className.replace(
-      "is-invalid",
-      ""
-    );
+    // If passwords match, remove error message and mark field as valid
+    feedback.innerHTML = "";
+    confirmPassword.classList.remove("is-invalid");
+    confirmPassword.classList.add("is-valid");
   }
 }
 

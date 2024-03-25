@@ -25,7 +25,7 @@ if($conn ->query($sql)===TRUE){
 }
 
 $email=$_POST['floatingEmail'];
-$password=password_hash($_POST['floatingConfirmPasswordFeedback'], PASSWORD_DEFAULT);
+$password=password_hash($_POST['floatingConfirmPassword'], PASSWORD_DEFAULT);
 $sql="INSERT INTO registrations (email, password) VALUES('$email','$password')";
 
 if ($conn -> query($sql)===TRUE){
