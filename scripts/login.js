@@ -24,18 +24,22 @@ function validateForm() {
   const confirmPassword = document.getElementById("floatingConfirmPassword");
   const feedback = document.getElementById("floatingConfirmPasswordFeedback");
 
-  if (password.value !== confirmPassword.value) {
-    // If passwords don't match, show error message
-    feedback.innerHTML = "Please ensure your password match";
-    confirmPassword.className = confirmPassword.className.replace(
-      "form-control",
-      "form-control is-invalid"
-    );
+  if (confirmPassword.value.trim() === "") {
+    feedback.innerText = "Please confirm your password";
+    confirmPassword.setCustomValidity("Please confirm your password");
+    confirmPassword.classList.add("is-invalid");
+    confirmPassword.classList.remove("is-valid");
   } else {
-    // If passwords match, remove error message and mark field as valid
-    feedback.innerHTML = "";
-    confirmPassword.classList.remove("is-invalid");
-    confirmPassword.classList.add("is-valid");
+    if (password.value !== confirmPassword.value) {
+      feedback.innerText = "Password do not match";
+      confirmPassword.setCustomValidity("Passwords do not match");
+      confirmPassword.classList.add("is-invalid");
+      confirmPassword.classList.remove("is-valid");
+    } else {
+      confirmPassword.setCustomValidity("");
+      confirmPassword.classList.add("is-valid");
+      confirmPassword.classList.remove("is-invalid");
+    }
   }
 }
 
