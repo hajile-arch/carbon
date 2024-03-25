@@ -23,8 +23,8 @@ function search(e) {
     }
   }
 
-  if (searchValue  === "") {
-    list_of_events.forEach(event => {
+  if (searchValue === "") {
+    list_of_events.forEach((event) => {
       event.classList.remove("d-none");
     });
   }
@@ -35,7 +35,8 @@ function handleFilter(btn) {
   const list_of_events = document.querySelectorAll(".event-ctn");
 
   for (let i = 0; i < list_of_events.length; i++) {
-    const list_of_categories = list_of_events[i].querySelectorAll(".categories");
+    const list_of_categories =
+      list_of_events[i].querySelectorAll(".categories");
     let shouldHide = true;
 
     for (let j = 0; j < list_of_categories.length; j++) {
@@ -52,11 +53,3 @@ function handleFilter(btn) {
     }
   }
 }
-
-function test() {
-  console.log("hit")
-}
-
-
-
-

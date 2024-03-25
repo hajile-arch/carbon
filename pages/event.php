@@ -14,7 +14,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    
   </head>
   <body>
     <div
@@ -34,7 +33,7 @@
         Upcoming Events
       </h1>
     </div>
-    
+
     <div class="border d-flex justify-content-center align-items-center">
       <!-- search bar -->
       <form class="d-flex gap-3 p-5 w-50" onsubmit="search(event)">
@@ -52,28 +51,86 @@
       </form>
       <!--  filter button group -->
       <div class="dropdown">
-        <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Filter 
+        <button
+          class="btn btn-outline-success dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Filter
         </button>
         <ul class="dropdown-menu p-0" style="width: 200px">
           <div class="d-flex flex-column align-items-start">
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this); test()">Environmental Cleanup</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Community Service</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Renewable Energy</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Seminar</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Gardening</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Sustainability</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Nature Exploration</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Conservation</button>
-            <button type="button" class="btn w-100 text-start" onclick="handleFilter(this)">Waste Reduction</button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Environmental Cleanup
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Community Service
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Renewable Energy
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Seminar
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Gardening
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Sustainability
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Nature Exploration
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Conservation
+            </button>
+            <button
+              type="button"
+              class="btn w-100 text-start"
+              onclick="handleFilter(this)"
+            >
+              Waste Reduction
+            </button>
           </div>
         </ul>
       </div>
-
     </div>
     <!-- list -->
     <div class="p-5 w-100 h-100 d-flex flex-column gap-5">
-        <?php include '../api/events.php'; ?>
+      <?php include '../api/events.php'; ?>
     </div>
     <script src="../scripts/event.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
