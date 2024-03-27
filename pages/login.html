@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body
     class="d-flex justify-content-center align-items-center border p-5"
@@ -38,13 +38,14 @@
           class="d-flex flex-column gap-4 needs-validation"
           novalidate
           method="post"
-          action="login.php"
+          action="../api/login.php"
         >
           <div class="form-floating">
             <input
               type="email"
               class="form-control rounded-0"
               id="floatingEmail"
+              name="floatingEmail"
               placeholder="name@example.com"
               required
             />
@@ -59,6 +60,7 @@
                 type="password"
                 class="form-control rounded-0"
                 id="floatingPassword"
+                name="floatingPassword"
                 placeholder="Password"
                 required
               />
@@ -95,7 +97,7 @@
             style="font-size: 12px"
           >
             <p class="text-body-tertiary">No account yet?</p>
-            <a href="/pages/register.html" class="link-secondary">Register</a>
+            <a href="register.html" class="link-secondary">Register</a>
           </div>
         </form>
       </div>

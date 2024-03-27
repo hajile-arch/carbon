@@ -1,4 +1,4 @@
-<?php
+  <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,8 +12,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
 // SQL query to fetch events data
-$sql_select_events = "SELECT * FROM events";
+$sql_select_events ="SELECT * FROM events";
 $result = $conn->query($sql_select_events);
 
 if ($result->num_rows > 0) {

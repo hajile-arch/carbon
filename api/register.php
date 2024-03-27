@@ -15,7 +15,8 @@ if($conn->connect_error){
 $sql = "CREATE TABLE IF NOT EXISTS registrations (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255),
-    password VARCHAR(255)
+    password VARCHAR(255),
+    admin BOOLEAN
 )";
 
 if($conn ->query($sql)===TRUE){
