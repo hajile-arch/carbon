@@ -1,0 +1,199 @@
+[33mcommit bab3a6ad02b5018130b4e5d28a18fcb21472e394[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mharry[m[33m, [m[1;31morigin/harry[m[33m)[m
+Author: Elijah <harvestzone1@gmail.com>
+Date:   Thu Mar 28 00:14:11 2024 +0800
+
+    Feat: Partially complete the backend for login.php & partially complete the UI design for profile.html
+    
+    Co-authored-by: Harry <rikashi-shifu@users.noreply.github.com>
+
+[33mcommit 7c6b458d0422dd4271bb95f198aee1e72cd41332[m
+Author: Elijah <harvestzone1@gmail.com>
+Date:   Wed Mar 27 15:58:35 2024 +0800
+
+    Co-authored-by: Harry <rikashi-shifu@users.noreply.github.com>
+
+[33mcommit bb0a27cd3a37b28a9ba0747776623753606402a4[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Mon Mar 25 15:54:47 2024 +0800
+
+    Chore
+
+[33mcommit aaab33ccfb1eb7ff3806d9fd3daeb30cc098f281[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Mon Mar 25 15:36:35 2024 +0800
+
+    Fix: register.html form validation
+    
+    Style: home.html dropdown button
+
+[33mcommit e233703232dd704cd9aa3719b8ae20a99e7c9a12[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Mon Mar 25 15:06:53 2024 +0800
+
+    Feat: Added pop up feedback form in home.html & added the functionality of clearing the inputs on submit in carousel form of home.html
+
+[33mcommit 318b5fbe54a72aee9f82c77c02d7a6b50c7b8994[m
+Author: Elijah <harvestzone1@gmail.com>
+Date:   Mon Mar 25 14:18:50 2024 +0800
+
+    Feat: Complete the functionality of filtering in event.php
+    
+    Co-authored-by: Harry <rikashi-shifu@users.noreply.github.com>
+
+[33mcommit 0460b758dfff3bc1d35ecb523a0886d6879e6ffb[m
+Author: Elijah <harvestzone1@gmail.com>
+Date:   Sun Mar 24 00:51:58 2024 +0800
+
+    Co-authored-by: Harry <rikashi-shifu@users.noreply.github.com>
+
+[33mcommit f71801eacdbf41379c004af450d0d7b65a32219f[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Sat Mar 23 23:20:58 2024 +0800
+
+    Feat: Added the functionality of search in event.php
+
+[33mcommit 98fb220a606f379324b14eae427b78423c0884fe[m
+Author: Elijah <harvestzone1@gmail.com>
+Date:   Sat Mar 23 01:26:49 2024 +0800
+
+    Co-authored-by: Harry <rikashi-shifu@users.noreply.github.com>
+
+[33mcommit cb0c85d256e244a015efae0b41ace01cb1b609d1[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Fri Mar 22 17:16:39 2024 +0800
+
+    Style: fix some styling to make the overall website styling consistent
+
+[33mcommit 6680548ee29eff8635ba680e476ebe0832016743[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Fri Mar 22 01:11:18 2024 +0800
+
+    fix: rename files & folders & organized their path, delete unused files & folders
+
+[33mcommit c4b39f0e536c19a080887bc14202e97c0179e051[m
+Author: Elijah <harvestzone1@gmail.com>
+Date:   Fri Mar 22 00:55:36 2024 +0800
+
+    Feat: Connect frontend and backend for event.php
+
+[33mcommit 75164935138605f3a4fb2e34838346f67ae44553[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Mar 21 21:37:05 2024 +0800
+
+    Feat: Added event.html with mock
+
+[33mcommit 07a71653bf06c0e7cb5c88361504f0fa4692f9cb[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Mar 21 19:20:24 2024 +0800
+
+    Feat: Added a little bit more onhover animation in learn.html
+
+[33mcommit 31cd1122d35533b402e450062d5231970c310cfd[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Wed Mar 20 23:31:54 2024 +0800
+
+    Chore: delete learn.css which is not used
+
+[33mcommit 4e676e3e5268a3dc93e31a0600610752519be1f3[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Wed Mar 20 23:29:25 2024 +0800
+
+    Refactor: My comp got issue, needa commit again
+
+[33mcommit 4df07a4ee4a9e662aac7f3850d915beb4fee1b3c[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Wed Mar 20 23:28:31 2024 +0800
+
+    Feat: Added learn.html
+
+[33mcommit 5298922f4839620e065d627599f81654b3403412[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Tue Mar 19 14:03:37 2024 +0800
+
+    Feat: Added validation to ensure password match confirm password & added the functionality to view password
+
+[33mcommit f5b5ed2201ba3e8da4fcb0b7f5786cbfdb39251e[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Fri Mar 15 12:20:36 2024 +0800
+
+    Refactor: Organize directories & turn all relative paths into absolute paths
+
+[33mcommit 0b12d321195d8d4e7e9893d7050551896d88cc75[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Mar 14 18:12:29 2024 +0800
+
+    Feat: Added five sections with some animations in index.html
+
+[33mcommit 160f704dbfc58c2c3898ce8b03083ac0d5c12876[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Tue Mar 12 15:27:49 2024 +0800
+
+    Feat: Added some content for index.html & implemented fullpage.js library for index.html
+
+[33mcommit 197e9c05c50b7c35205c9ef2f5a77cf6da90b93e[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Mon Mar 11 16:00:00 2024 +0800
+
+    Feat: Added validation for both login & register pages
+
+[33mcommit d2305887a314ba66b91e6f9027e14860279dc686[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Mon Mar 11 15:29:22 2024 +0800
+
+    Feat: Done UI for login & register, left validation, organized directories
+
+[33mcommit 0bf37cfd8666907928a69dcc38ea115827e95d4e[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Mar 7 00:52:38 2024 +0800
+
+    Feat: Added index.html as login page
+
+[33mcommit 2126336a4b812a5b6ac2582e79d38c28dbc00920[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Tue Mar 5 21:47:08 2024 +0800
+
+    Feat: Added validation for all input & fix some bugs
+
+[33mcommit 2ed8054a109374ece28d31c395e801595c22c8b3[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Tue Mar 5 01:13:54 2024 +0800
+
+    Refactor: home
+
+[33mcommit 25431a0fce92f851012ab5829e25dda20037f503[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Sun Mar 3 23:09:50 2024 +0800
+
+    Feat: Redesign the header & navigation bar
+    
+    Co-authored-by: hajile-7 <hajile-7@users.noreply.github.com>
+
+[33mcommit 7292861d7050eac2148f9f49fd1a18c3c8057fb2[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Sun Mar 3 01:28:46 2024 +0800
+
+    Feat: Complete home UI/UX
+
+[33mcommit f0221c36a17184d75a94932b3f01e0cddaeb7814[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Sat Mar 2 12:25:46 2024 +0800
+
+    Feat: Enhance UI for home.html
+
+[33mcommit 2501d2a0a72b3dab7418042a5db23630e82239db[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Feb 29 23:39:44 2024 +0800
+
+    Feat: Added all the necessary pages 2.0
+
+[33mcommit 889f367f0d3b3e417428afd22cc02b13affee5f8[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Feb 29 23:38:33 2024 +0800
+
+    Feat: Added all the necessary pages
+
+[33mcommit 15bf980b91af2c0be9055ed6d1564e044bb33e5a[m
+Author: rikashi-shifu <harryliow229@gmail.com>
+Date:   Thu Feb 29 14:02:24 2024 +0800
+
+    Request: Init
