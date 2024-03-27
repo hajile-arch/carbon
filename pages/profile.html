@@ -194,36 +194,60 @@
       </div>
     </div>
 
-    <main
-      class="d-flex border position-absolute w-100 h-100"
-      style="margin-top: 70px"
-    >
-      <!-- left -->
-      <div class="border" style="width: 30%">
-        <div
-          class="d-flex flex-column justify-content-center align-items-center p-5"
-        >
-          <div class="w-100 d-flex justify-content-center align-items-center">
-            <div
-              class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
-              style="width: 300px; height: 300px"
-            >
-              <img src="https://placehold.co/300" alt="pfp" />
-            </div>
-          </div>
+    <main class="border position-absolute w-100 h-100" style="margin-top: 70px">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center h-100"
+      >
+        <div class="w-100 d-flex justify-content-center align-items-center">
           <div
-            class="w-100 d-flex flex-column justify-content-center align-items-start gap-2 pt-2"
+            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center z-1 border bg-white shadow"
+            style="width: 200px; height: 200px"
           >
-            <h1 class="d-flex flex-column w-75 w-100">
-              <span class="display-3 fs-3">Name</span>
-              <span class="display-4 fs-4 text-body-tertiary">@username</span>
+            <img src="https://placehold.co/200" alt="pfp" />
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column justify-content-center align-items-center p-5 border rounded-5 shadow"
+          style="width: 40%; margin-top: -120px"
+        >
+          <div
+            class="w-100 d-flex flex-column justify-content-center align-items-center gap-2"
+            style="padding-top: 100px"
+          >
+            <h1
+              class="d-flex flex-column justify-content-center align-items-center"
+            >
+              <span class="display-3 fs-3">Harry Liow</span>
+              <span class="display-6 fs-6 text-body-tertiary"
+                >@rikashi-shifu</span
+              >
             </h1>
-            <p class="w-100 fw-lighter">Bio</p>
+            <p class="fw-lighter">In the name of Gsus, Amin.</p>
+            <p
+              class="fw-lighter d-flex flex-column justify-content-center align-items-start"
+            >
+              <span>Email: harryliow@gmail.com</span>
+              <span>Phone number: 01136136121</span>
+            </p>
+            <div class="container">
+              <p class="fw-lighter row">
+                <span class="col">Commuting methods</span>
+                <span class="col">Energy sources</span>
+                <span class="col">Dietary preferences</span>
+              </p>
+              <p class="fw-lighter row">
+                <span class="col">Car</span>
+                <span class="col">Electric</span>
+                <span class="col">Seafood</span>
+              </p>
+            </div>
+          <div class="w-50">
+            <button type="button" class="btn btn-outline-secondary w-100">
+              Edit profile
+            </button>
           </div>
         </div>
       </div>
-      <!-- right -->
-      <div class="border" style="width: 70%"></div>
     </main>
     <script src="../scripts/feedback.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

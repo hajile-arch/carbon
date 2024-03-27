@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirect to welcome page
             exit;
         } else {
-            // Passwords do not match, authentication failed
+            // Passwords do not match, authentication failed (ui)
             echo "Invalid email or password";
         }
     } else {
-        // Email not found in the database
+        // Email not found in the database (ui)
         echo "Invalid email or password";
     }
 
