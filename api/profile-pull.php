@@ -35,23 +35,40 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+
 $email = $_SESSION["email"];
 
+// Prepare and execute SQL query to select user data based on email
+$sql = "SELECT * FROM profiles WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$name = $_POST['name'];
-$username = $_POST['username'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$commutingMethod = $_POST['commuting-method'];
-$energySource = $_POST['energy-source'];
-$dietaryPreference = $_POST['dietary-preference'];
+// Check if data is found
+if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+    // Assign fetched data to variables
+    $name = $row['name'];
+    $username = $row['username'];
+    $phone = $row['phone'];
+    $commutingMethod = $row['commuting_method'];
+    $energySource = $row['energy_source'];
+    $dietaryPreference = $row['dietary_preference'];
+} else {
+    // Handle case where no data is found for the user
+    // You can either set default values or display an error message
+    $name = '';
+    $username = '';
+    $phone = '';
+    $commutingMethod = '';
+    $energySource = '';
+    $dietaryPreference = '';
+}
 
+// Close the statement
+$stmt->close();
 
-// Insert data into database
-$sql = "UPDATE profiles SET name='$name', username='$username', email='$email', phone='$phone', commuting_method='$commutingMethod', energy_source='$energySource', dietary_preference='$dietaryPreference' WHERE id=1"; // Adjust WHERE clause as needed
-
-
-if ($conn->query($sql) === TRUE) {
     echo '<div class="w-75 d-flex shadow border">';
     // left
     echo '<div class="w-50 d-flex justify-content-center align-items-center">';
@@ -59,14 +76,14 @@ if ($conn->query($sql) === TRUE) {
     echo '</div>';
     // right
     echo '<div class="w-50 d-flex justify-content-center align-items-center bg-secondary-subtle">';
-    echo '<form action="../api/profiles.php" method="post" enctype="multipart/form-data" id="user-data" class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center">';
+    echo '<form action="../api/profile-post.php" method="post" enctype="multipart/form-data" id="user-data" class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center">';
     echo '<div class="d-flex flex-column gap-2 w-100">';
     echo '<div class="form-floating">';
-    echo '<input type="text" class="form-control bg-white border-0" id="name" name="name" value="" disabled />';
+    echo '<input type="text" class="form-control bg-white border-0" id="name" name="name" value="'.$name.'" disabled />';
     echo '<label for="name">Name</label>';
     echo '</div>';
     echo '<div class="form-floating">';
-    echo '<input type="text" class="form-control bg-white border-0" id="username" name="username" value="" disabled />';
+    echo '<input type="text" class="form-control bg-white border-0" id="username" name="username" value="'.$username.'" disabled />';
     echo '<label for="username">Username</label>';
     echo '</div>';
     echo '<div class="form-floating">';
@@ -74,19 +91,19 @@ if ($conn->query($sql) === TRUE) {
     echo '<label for="email">Email</label>';
     echo '</div>';
     echo '<div class="form-floating">';
-    echo '<input type="tel" class="form-control bg-white border-0" id="phone" name="phone" value="" disabled />';
+    echo '<input type="tel" class="form-control bg-white border-0" id="phone" name="phone" value="'.$phone.'" disabled />';
     echo '<label for="phone">Phone number</label>';
     echo '</div>';
     echo '<div class="form-floating">';
-    echo '<input type="text" class="form-control bg-white border-0" id="commuting-method" name="commuting-method" value="" disabled />';
+    echo '<input type="text" class="form-control bg-white border-0" id="commuting-method" name="commuting-method" value="'.$commutingMethod.'" disabled />';
     echo '<label for="commuting-method">Commuting method</label>';
     echo '</div>';
     echo '<div class="form-floating">';
-    echo '<input type="text" class="form-control bg-white border-0" id="energy-source" name="energy-source" value="" disabled />';
+    echo '<input type="text" class="form-control bg-white border-0" id="energy-source" name="energy-source" value="'.$energySource.'" disabled />';
     echo '<label for="energy-source">Energy source</label>';
     echo '</div>';
     echo '<div class="form-floating">';
-    echo '<input type="text" class="form-control bg-white border-0" id="dietary-preference" name="dietary-preference" value="" disabled />';
+    echo '<input type="text" class="form-control bg-white border-0" id="dietary-preference" name="dietary-preference" value="'.$dietaryPreference.'" disabled />';
     echo '<label for="dietary-preference">Dietary preference</label>';
     echo '</div>';
     echo '</div>';
@@ -94,9 +111,7 @@ if ($conn->query($sql) === TRUE) {
     echo '</form>';
     echo '</div>';
     echo '</div>';
-} else {
-    echo "Error updating profile: " . $conn->error;
-}
+
 
 
 
