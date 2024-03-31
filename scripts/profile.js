@@ -9,7 +9,6 @@ function editProfile(btn) {
         setTimeout(() => {
             btn.setAttribute("type", "submit")
         }, 1);
-    }
-}
+    }}
 
 
