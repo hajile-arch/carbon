@@ -35,19 +35,23 @@ $commutingMethod = $_POST['commuting-method'];
 $energySource = $_POST['energy-source'];
 $dietaryPreference = $_POST['dietary-preference'];
 
+$sql_check_user = "SELECT * FROM profiles WHERE email='$email'";
+$result_check_user = $conn->query($sql_check_user);
 
-// Insert data into database
-$sql = 'INSERT INTO profiles (name, username, email, phone, commuting_method, energy_source, dietary_preference) VALUES("$name", "$username", "$email", "$phone","$commutingMethod", "$energySource", "$dietaryPreference")'; // Adjust WHERE clause as needed
+if ($result_check_user->num_rows > 0) {
+    // User already exists, perform an update
+    $sql = "UPDATE profiles SET name='$name', username='$username', phone='$phone', commuting_method='$commutingMethod', energy_source='$energySource', dietary_preference='$dietaryPreference' WHERE email='$email'";
+} else {
+    // User does not exist, perform an insert
+    $sql = "INSERT INTO profiles (name, username, email, phone, commuting_method, energy_source, dietary_preference) VALUES ('$name', '$username', '$email', '$phone', '$commutingMethod', '$energySource', '$dietaryPreference')";
+}
+
+
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-echo $email;
-echo $name;
-echo $username;
-echo $phone;
-echo $commutingMethod;
-echo $energySource;
-echo $dietaryPreference;
+header("Location: ../pages/profile.php");
+    exit;
