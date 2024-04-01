@@ -21,7 +21,7 @@ session_start()
     <style>
       .form-floating > .form-control:disabled ~ label::after,
       .form-floating > :disabled ~ label::after {
-        background-color: white;
+        background-color: transparent;
       }
       .form-floating > label {
         margin-left: -1px;
