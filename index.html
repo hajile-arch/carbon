@@ -14,127 +14,115 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.css"
-      integrity="sha512-i5IHYtHBVvbgT6M4ltVKNqF7fh/MTVfGh3ilW1gxxgmlMocsl8aYz28aF0Iph+ceUpun06UW9CpExog9qXqFKQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .fp-watermark {
-        display: none !important;
-      }
-    </style>
   </head>
   <body>
-    <main id="fullpage">
-      <!-- section 1 -->
-      <div id="section-1" class="section">
-        <header
-          class="d-flex justify-content-between w-100 z-1 position-absolute top-0 border"
-          style="height: 70px"
-        >
-          <a
-            href="index.html"
-            class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
-            style="margin-left: 10px"
-          >
-            <div>
-              <img
-                src="img/nav/logo.png"
-                alt="logo"
-                width="60px"
-                height="60px"
-                style="
-                  filter: invert(38%) sepia(53%) saturate(604%)
-                    hue-rotate(100deg) brightness(99%) contrast(91%);
-                "
-              />
-            </div>
-            <h4 class="dropdown-item text-black mb-0">Carbon</h4>
-          </a>
-          <div class="w-25 d-flex justify-content-end pe-4">
-            <div class="d-flex justify-content-center align-items-center">
-              <a href="pages/login.html">
-                <button
-                  class="btn btn-outline-dark border px-3"
-                  onmouseover="this.className = this.className.replace('border', '')"
-                  onmouseleave="this.className = this.className.replace('btn', 'btn border')"
-                  style="font-size: 12px"
-                >
-                  Sign in
-                </button>
-              </a>
-            </div>
-          </div>
-        </header>
-        <div class="d-flex align-items-end" style="height: 100dvh">
-          <div
-            class="w-50 d-flex justify-content-center align-items-center"
-            style="height: 91.5dvh"
-          >
-            <div class="ps-5 ms-4">
-              <h1 class="display-2">Track your carbon footprint</h1>
-              <p class="text-secondary">
-                Sign up now to calculate your carbon footprint
-              </p>
-              <a
-                href="pages/register.html"
-                class="btn btn-success shadow d-flex gap-3 fs-5 mt-5 px-5 py-3"
-                style="width: fit-content"
-              >
-                <i class="bi bi-calculator"></i>
-                <span>Sign up</span>
-              </a>
-            </div>
-          </div>
-          <div class="w-75" style="height: 91.5dvh">
-            <div
-              class="d-flex justify-content-center align-items-center overflow-hidden h-100 w-100"
+    <header
+      class="d-flex justify-content-between w-100 z-1 position-absolute top-0 border"
+      style="height: 70px"
+    >
+      <a
+        href="index.html"
+        class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
+        style="margin-left: 10px"
+      >
+        <div>
+          <img
+            src="img/nav/logo.png"
+            alt="logo"
+            width="60px"
+            height="60px"
+            style="
+              filter: invert(38%) sepia(53%) saturate(604%) hue-rotate(100deg)
+                brightness(99%) contrast(91%);
+            "
+          />
+        </div>
+        <h4 class="dropdown-item text-black mb-0">Carbon</h4>
+      </a>
+      <div class="w-25 d-flex justify-content-end pe-4">
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="pages/login.html">
+            <button
+              class="btn btn-outline-dark border px-3"
+              onmouseover="this.className = this.className.replace('border', '')"
+              onmouseleave="this.className = this.className.replace('btn', 'btn border')"
+              style="font-size: 12px"
             >
-              <img
-                src="img/index/section1.svg"
-                class="object-fit-cover"
-                alt="section1"
-                width="800"
-                style="filter: saturate(1.5) hue-rotate(40deg)"
-              />
-            </div>
+              Sign in
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- section 1 -->
+      <div class="d-flex align-items-end" style="height: 100dvh">
+        <div
+          class="w-50 d-flex justify-content-center align-items-center"
+          style="height: 90dvh"
+        >
+          <div class="ps-5 ms-4">
+            <h1 class="display-2">Track your carbon footprint</h1>
+            <p class="text-secondary">
+              Sign up now to calculate your carbon footprint
+            </p>
+            <a
+              href="pages/register.html"
+              class="btn btn-success shadow d-flex gap-3 fs-5 mt-5 px-5 py-3"
+              style="width: fit-content"
+            >
+              <i class="bi bi-calculator"></i>
+              <span>Sign up</span>
+            </a>
+          </div>
+        </div>
+        <div class="w-75" style="height: 91.5dvh">
+          <div
+            class="d-flex justify-content-center align-items-center overflow-hidden h-100 w-100"
+          >
+            <img
+              src="img/index/section1.svg"
+              class="object-fit-cover"
+              alt="section1"
+              width="800"
+              style="filter: saturate(1.5) hue-rotate(40deg)"
+            />
           </div>
         </div>
       </div>
       <!-- section 2 -->
-      <div id="section-2" class="section">
+      <div class="d-flex align-items-start" style="height: 90dvh">
         <div
           class="d-flex justify-content-center align-items-center rounded z-3"
-          style="height: 100dvh"
+          style="height: inherit"
         >
           <img
-            id="section-2-img"
             class="w-50"
             src="img/index/section2.svg"
             alt="section2"
             width="700"
             height="600"
           />
-          <div
-            id="how-it-works-container"
-            class="d-flex justify-content-end align-items-center w-50"
-          >
+          <div class="d-flex justify-content-end align-items-center w-50">
             <div>
               <h1 class="display-1">What is Carbon Footprint?</h1>
-              <p id="how-it-works-paragraph">
-                <a href="pages/learn.html" class="link-secondary">Click here</a>
+              <p>
+                <a
+                  href="pages/learn.html"
+                  target="_blank"
+                  class="link-secondary"
+                  >Click here</a
+                >
                 to learn more about carbon footprint
               </p>
             </div>
           </div>
         </div>
       </div>
-      <!-- section 3 -->
-      <div id="section-3" class="section">
+
+      <!-- section n -->
+      <!-- <div id="section-3" class="section">
         <div
           class="d-flex flex-column justify-content-center align-items-center p-5"
           style="background-color: #2e3138"
@@ -152,7 +140,7 @@
             style="margin-top: 300px; transition-duration: 1s"
           >
             <div class="d-flex flex-column gap-3">
-              <!-- card 1 -->
+              
               <div class="card border-0">
                 <img
                   src="https://placehold.co/100"
@@ -168,7 +156,7 @@
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
-              <!-- card 2 -->
+              
               <div class="card border-0">
                 <img
                   src="https://placehold.co/100"
@@ -187,7 +175,7 @@
               </div>
             </div>
             <div class="pt-5 d-flex flex-column gap-3">
-              <!-- card 3 -->
+              
               <div class="card border-0">
                 <img
                   src="https://placehold.co/100"
@@ -203,7 +191,7 @@
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
-              <!-- card 4 -->
+              
               <div class="card border-0">
                 <img
                   src="https://placehold.co/100"
@@ -222,108 +210,103 @@
             </div>
           </div>
         </div>
-      </div>
-      <div id="section-4" class="section">
-        <div
-          class="d-flex justify-content-center align-items-center"
-          style="height: 90dvh"
-        >
-          <div
-            class="w-50 h-100 d-flex flex-column justify-content-center align-items-center mx-5 px-5"
-          >
-            <div class="d-flex flex-column gap-3">
-              <h1 class="display-4">About us</h1>
-              <p class="text-black-50">
-                Welcome to our carbon footprint website, founded by college
-                students Elijah, Nick, Lucas, and Aidan. Our mission is to
-                provide comprehensive education on carbon footprints, enabling
-                individuals to track, analyze, and reduce their emissions
-                effectively. Through our platform, we offer personalized
-                recommendations for sustainable practices, foster community
-                engagement, and measure collective impact. With informative
-                content, intuitive tracking tools, and dedicated community
-                support, we empower users to make informed decisions and
-                actively contribute to a greener future. Join us in our
-                commitment to reducing carbon emissions and creating positive
-                environmental change!
-              </p>
-            </div>
-          </div>
-          <div
-            class="w-50 h-100"
-            style="
-              background-image: url('img/index/section4.avif');
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
-              height: 100%;
-            "
-          ></div>
-        </div>
-        <footer
-          class="d-flex justify-content-between align-items-center px-4"
-          style="background-color: #eaecf1; height: 10dvh"
-        >
-          <div class="d-flex gap-3 ps-2" style="font-size: 12px">
-            <a
-              href="#"
-              class="m-0 link-secondary link-underline-opacity-0 link-underline-opacity-50-hover"
-              >Privacy policy</a
-            >
-            <a
-              href="pages/event.php"
-              class="m-0 link-secondary link-underline-opacity-0 link-underline-opacity-50-hover"
-              >Our events</a
-            >
-            <a
-              href="pages/learn.html"
-              class="m-0 link-secondary link-underline-opacity-0 link-underline-opacity-50-hover"
-              >Learn more</a
-            >
-          </div>
-          <div class="d-flex gap-4 pe-2">
-            <a
-              href="https://www.youtube.com/"
-              class="link-secondary"
-              target="_blank "
-              ><i class="bi bi-youtube"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/"
-              class="link-secondary"
-              target="_blank"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a
-              href="https://www.threads.net/"
-              class="link-secondary"
-              target="_blank"
-              ><i class="bi bi-threads"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/"
-              class="link-secondary"
-              target="_blank"
-              ><i class="bi bi-facebook"></i
-            ></a>
-            <a
-              href="https://www.twitter.com/"
-              class="link-secondary"
-              target="_blank"
-              ><i class="bi bi-twitter-x"></i
-            ></a>
-          </div>
-        </footer>
-      </div>
+      </div> -->
 
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js"
-        integrity="sha512-yHHLi2ZwgtW9QNVZd0asqMyWGJ6Kx73ijKlGWSi3MwYFB5ZzOJV8wPtopKr6muHk5SERgF3OB/2dZj3StlI34w=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="scripts/index.js"></script>
+      <!-- section 3 -->
+      <div class="p-5" style="background-color: #2e3138"></div>
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="height: 90dvh"
+      >
+        <div
+          class="w-50 h-100 d-flex flex-column justify-content-center align-items-center mx-5 px-5"
+        >
+          <div class="d-flex flex-column gap-3">
+            <h1 class="display-4">About us</h1>
+            <p class="text-black-50">
+              Welcome to our carbon footprint website, founded by college
+              students Elijah, Nick, Lucas, and Aidan. Our mission is to provide
+              comprehensive education on carbon footprints, enabling individuals
+              to track, analyze, and reduce their emissions effectively. Through
+              our platform, we offer personalized recommendations for
+              sustainable practices, foster community engagement, and measure
+              collective impact. With informative content, intuitive tracking
+              tools, and dedicated community support, we empower users to make
+              informed decisions and actively contribute to a greener future.
+              Join us in our commitment to reducing carbon emissions and
+              creating positive environmental change!
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-50 h-100"
+          style="
+            background-image: url('img/index/section4.avif');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+          "
+        ></div>
+      </div>
     </main>
+    <footer
+      class="d-flex justify-content-between align-items-center px-4"
+      style="background-color: #eaecf1; height: 10dvh"
+    >
+      <div class="d-flex gap-3 ps-2" style="font-size: 12px">
+        <a
+          href="#"
+          class="m-0 link-secondary link-underline-opacity-0 link-underline-opacity-50-hover"
+          >Privacy policy</a
+        >
+        <a
+          href="pages/event.php"
+          target="_blank"
+          class="m-0 link-secondary link-underline-opacity-0 link-underline-opacity-50-hover"
+          >Our events</a
+        >
+        <a
+          href="pages/learn.html"
+          target="_blank"
+          class="m-0 link-secondary link-underline-opacity-0 link-underline-opacity-50-hover"
+          >Learn more</a
+        >
+      </div>
+      <div class="d-flex gap-4 pe-2">
+        <a
+          href="https://www.youtube.com/"
+          class="link-secondary"
+          target="_blank "
+          ><i class="bi bi-youtube"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/"
+          class="link-secondary"
+          target="_blank"
+          ><i class="bi bi-instagram"></i
+        ></a>
+        <a
+          href="https://www.threads.net/"
+          class="link-secondary"
+          target="_blank"
+          ><i class="bi bi-threads"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/"
+          class="link-secondary"
+          target="_blank"
+          ><i class="bi bi-facebook"></i
+        ></a>
+        <a
+          href="https://www.twitter.com/"
+          class="link-secondary"
+          target="_blank"
+          ><i class="bi bi-twitter-x"></i
+        ></a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

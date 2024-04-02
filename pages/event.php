@@ -19,7 +19,7 @@
     <div
       class="d-flex justify-content-center align-items-center"
       style="
-        height: 50dvh;
+        height: 100dvh;
         background-image: linear-gradient(
             rgba(4, 9, 30, 0.3),
             rgba(4, 9, 30, 0.3)

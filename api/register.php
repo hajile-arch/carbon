@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($check_query);
     if ($result->num_rows > 0) {
         // (ui)
-        echo "\nEmail already exists!";
+        header("Location: ../pages/login.html");
     } else {
         // Insert new registration
         $sql = "INSERT INTO registrations (email, password) VALUES ('$email', '$password')";

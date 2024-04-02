@@ -35,7 +35,7 @@ session_start()
       style="height: 70px"
     >
       <a
-        href="../index.html"
+        href="home.html"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
         style="margin-left: 10px"
       >
@@ -71,6 +71,7 @@ session_start()
         >
         <a
           href="learn.html"
+          target="_blank"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
@@ -82,7 +83,7 @@ session_start()
       >
         <div class="btn-group border">
           <a
-            href="profile.html"
+            href="profile.php"
             class="btn"
             onmouseover="this.style.backgroundColor = '#f8f9fa'"
             onmouseleave="this.style.backgroundColor = 'white'"
@@ -98,7 +99,7 @@ session_start()
             onmouseleave="this.style.backgroundColor = 'white'"
           ></button>
           <ul class="dropdown-menu mt-2">
-            <a class="dropdown-item btn" href="event.php">Event</a>
+            <a class="dropdown-item btn" href="event.php" target="_blank">Event</a>
             <button
               type="button"
               class="dropdown-item btn"
@@ -199,6 +200,7 @@ session_start()
       <div class="d-flex">
         <div class="toast-body">Feedback submitted!</div>
         <button
+          id="btn"
           type="button"
           class="btn-close me-2 m-auto"
           data-bs-dismiss="toast"
@@ -206,7 +208,7 @@ session_start()
           onclick="closeToast()"
         ></button>
       </div>
-    </div>
+    </div> 
     <main class="border position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="padding-top: 70px">
       <?php include '../api/profile-pull.php' ?>
     </main>

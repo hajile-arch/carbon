@@ -32,7 +32,7 @@
       style="height: 70px"
     >
       <a
-        href="../index.html"
+        href="home.html"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
         style="margin-left: 10px"
       >
@@ -68,6 +68,7 @@
         >
         <a
           href="learn.html"
+          target="_blank"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
@@ -95,7 +96,7 @@
             onmouseleave="this.style.backgroundColor = 'white'"
           ></button>
           <ul class="dropdown-menu mt-2">
-            <a class="dropdown-item btn" href="event.php">Event</a>
+            <a class="dropdown-item btn" href="event.php" target="_blank">Event</a>
             <button
               type="button"
               class="dropdown-item btn"
@@ -234,7 +235,9 @@
           id="carousel"
           class="carousel carousel-dark slide rounded-5 mt-5 border border-5 overflow-hidden shadow needs-validation"
           style="width: 50%; background-color: white"
-          action="home.php"
+          action="../api/home.php"
+          onsubmit="console.log('submit')"
+          method="POST"
         >
           <div class="carousel-inner" style="height: 60dvh">
             <!-- slide 1 -->
@@ -258,6 +261,7 @@
                     id="monthlyElectricBill"
                     class="form-control"
                     type="number"
+                    name="monthlyElectricBill"
                     placeholder="$"
                     oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
                   />
@@ -290,6 +294,7 @@
                   <input
                     id="monthlyGasBill"
                     class="form-control"
+                    name="monthlyGasBill"
                     type="number"
                     placeholder="$"
                     oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
@@ -317,6 +322,7 @@
                   <input
                     id="monthlyOilBill"
                     class="form-control"
+                    name="monthlyOilBill"
                     type="number"
                     placeholder="$"
                     oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
@@ -344,6 +350,7 @@
                   <input
                     id="totalMileage"
                     class="form-control"
+                    name="totalMileage"
                     type="number"
                     oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this); totalMileageValidation(this)"
                   />
@@ -377,6 +384,7 @@
                     id="totalYear"
                     class="form-control"
                     type="number"
+                    name="totalYear"
                     oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this); totalYearValidation(this); yearlyMileageValidation()"
                   />
                   <div
@@ -409,6 +417,7 @@
                   <input
                     id="numberOfFlights"
                     class="form-control"
+                    name="numberOfFlights"
                     type="number"
                     oninput="getBtnState('.carousel-item.active'); setBtnState(this); inputValidation(this)"
                   />
@@ -432,7 +441,7 @@
                   <input
                     type="radio"
                     class="btn-check btn-lg"
-                    name="btnradio"
+                    name="doRecycleNewspaper"
                     id="doRecycleNewspaper"
                     autocomplete="off"
                     checked
@@ -446,7 +455,7 @@
                   <input
                     type="radio"
                     class="btn-check"
-                    name="btnradio"
+                    name="dontRecycleNewspaper"
                     id="dontRecycleNewspaper"
                     autocomplete="off"
                   />
@@ -475,7 +484,7 @@
                   <input
                     type="radio"
                     class="btn-check"
-                    name="options-outlined"
+                    name="doRecycleAluminiumAndTin"
                     id="doRecycleAluminiumAndTin"
                     autocomplete="off"
                     checked
@@ -488,7 +497,7 @@
                   <input
                     type="radio"
                     class="btn-check"
-                    name="options-outlined"
+                    name="dontRecycleAluminiumAndTin"
                     id="dontRecycleAluminiumAndTin"
                     autocomplete="off"
                   />

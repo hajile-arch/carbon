@@ -32,7 +32,7 @@
       style="height: 70px"
     >
       <a
-        href="../index.html"
+        href="home.html"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
         style="margin-left: 10px"
       >
@@ -68,6 +68,7 @@
         >
         <a
           href="learn.html"
+          target="_blank"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
@@ -95,7 +96,7 @@
             onmouseleave="this.style.backgroundColor = 'white'"
           ></button>
           <ul class="dropdown-menu mt-2">
-            <a class="dropdown-item btn" href="event.php">Event</a>
+            <a class="dropdown-item btn" href="event.php" target="_blank">Event</a>
             <button
               type="button"
               class="dropdown-item btn"
@@ -234,6 +235,7 @@
                   name="name"
                   value="Elijah Wong"
                   disabled
+                  oninput="validateName(this)"
                 />
                 <label for="email">Name</label>
               </div>
@@ -305,6 +307,7 @@
               </div>
             </div>
             <button
+              id="btn"
               class="btn btn-dark w-100"
               type="button"
               onclick="editProfile(this)"

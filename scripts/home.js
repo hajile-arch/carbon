@@ -116,23 +116,11 @@ function handleSubmitBtn() {
   const submit_btn = document.getElementById("submit-btn");
   if (
     document
-      .querySelector(".carousel-item.active")
-      .className.includes("slide-8")
+    .querySelector(".carousel-item.active")
+    .className.includes("slide-8")
   ) {
-    submit_btn.setAttribute("type", "submit");
-    const carousel = document.querySelector(".carousel-inner");
-    if (carousel) {
-      const inputFields = carousel.querySelectorAll(".form-control");
-      inputFields.forEach((input) => {
-        input.value = "";
-      });
-    }
-    const slide = document.querySelectorAll(".carousel-item");
-    for (let i = 0; slide.length > i; i++) {
-      slide[i].setAttribute("data-next-btn-state", "disabled");
-    }
-  } else {
-    submit_btn.setAttribute("type", "button");
+    const form = document.getElementById("carousel");
+    form.submit();
   }
 }
 

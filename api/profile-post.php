@@ -40,7 +40,7 @@ $result_check_user = $conn->query($sql_check_user);
 
 if ($result_check_user->num_rows > 0) {
     // User already exists, perform an update
-    $sql = "UPDATE profiles SET name='$name', username='$username', phone='$phone', commuting_method='$commutingMethod', energy_source='$energySource', dietary_preference='$dietaryPreference' WHERE email='$email'";
+    $sql = "UPDATE profiles SET name='$name', email='$email',username='$username', phone='$phone', commuting_method='$commutingMethod', energy_source='$energySource', dietary_preference='$dietaryPreference' WHERE email='$email'";
 } else {
     // User does not exist, perform an insert
     $sql = "INSERT INTO profiles (name, username, email, phone, commuting_method, energy_source, dietary_preference) VALUES ('$name', '$username', '$email', '$phone', '$commutingMethod', '$energySource', '$dietaryPreference')";

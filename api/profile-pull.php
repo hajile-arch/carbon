@@ -37,6 +37,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 $email = $_SESSION["email"];
+echo $email;
 
 // Prepare and execute SQL query to select user data based on email
 $sql = "SELECT * FROM profiles WHERE email = ?";
@@ -45,12 +46,9 @@ $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
 
-echo print_r($result);
-
 // Check if data is found
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
-    // Assign fetched data to variables
     $name = $row['name'];
     $username = $row['username'];
     $phone = $row['phone'];
@@ -81,7 +79,7 @@ $stmt->close();
     echo '<form action="../api/profile-post.php" method="post" enctype="multipart/form-data" id="user-data" class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center">';
     echo '<div class="d-flex flex-column gap-2 w-100">';
     echo '<div class="form-floating">';
-    echo '<input type="text" class="form-control bg-white border-0" id="name" name="name" value="'.$name.'" disabled />';
+    echo '<input type="text" class="form-control bg-white border-0" id="name" name="name" value="'.$name.'" disabled oninput="validateName(this)" />';
     echo '<label for="name">Name</label>';
     echo '</div>';
     echo '<div class="form-floating">';
