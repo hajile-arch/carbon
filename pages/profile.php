@@ -1,6 +1,6 @@
 <?php
 session_start()
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -212,7 +212,6 @@ session_start()
     <main class="border position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="padding-top: 70px">
       <?php include '../api/profile-pull.php' ?>
     </main>
-    
 
     <script src="../scripts/profile.js"></script>
     <script src="../scripts/feedback.js"></script>

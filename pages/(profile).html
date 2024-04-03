@@ -210,113 +210,52 @@
       class="border position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
       style="padding-top: 70px"
     >
-      <div class="w-75 d-flex shadow border">
-        <!-- left -->
-        <div class="w-50 d-flex justify-content-center align-items-center">
-          <img src="../img/profile/pfp.svg" alt="pfp" />
-        </div>
-        <!-- right -->
-        <div
-          class="w-50 d-flex justify-content-center align-items-center bg-secondary-subtle"
-        >
-          <form
-            action="../api/profiles.php"
-            method="post"
-            enctype="multipart/form-data"
-            id="user-data"
-            class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center"
-          >
-            <div class="d-flex flex-column gap-2 w-100">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-white border-0"
-                  id="name"
-                  name="name"
-                  value="Elijah Wong"
-                  disabled
-                  oninput="validateName(this)"
-                />
-                <label for="email">Name</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-white border-0"
-                  id="username"
-                  name="username"
-                  value="@harvestzone"
-                  disabled
-                />
-                <label for="username">Username</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="email"
-                  class="form-control bg-white border-0"
-                  id="email"
-                  name="email"
-                  value="harvestzone@gmail.com"
-                  disabled
-                />
-                <label for="email">Email</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="tel"
-                  class="form-control bg-white border-0"
-                  id="phone"
-                  value="0122550470"
-                  name="phone"
-                  disabled
-                />
-                <label for="phone">Phone number</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-white border-0"
-                  id="commuting-method"
-                  value="Fly"
-                  name="commuting-method"
-                  disabled
-                />
-                <label for="commuting-method">Commuting method</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-white border-0"
-                  id="energy-source"
-                  value="Mana"
-                  name="energy-source"
-                  disabled
-                />
-                <label for="energy-source">Energy source</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-white border-0"
-                  id="dietary-preference"
-                  name="dietary-preference"
-                  value="Human"
-                  disabled
-                />
-                <label for="dietary-preference">Dietary preference</label>
-              </div>
-            </div>
-            <button
-              id="btn"
-              class="btn btn-dark w-100"
-              type="button"
-              onclick="editProfile(this)"
-            >
-              Edit profile
-            </button>
-          </form>
-        </div>
+    <div class="w-75 d-flex shadow border">
+      <!-- Left -->
+      <div class="w-50 d-flex justify-content-center align-items-center">
+          <img src="../img/profile/pfp.svg" alt="pfp"/>
       </div>
+      <!-- Right -->
+      <div class="w-50 d-flex justify-content-center align-items-center bg-secondary-subtle">
+          <form action="../api/profile-post.php" method="post" enctype="multipart/form-data" id="user-data" class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center">
+              <div class="d-flex flex-column gap-2 w-100">
+                  <div class="form-floating">
+                      <input type="text" class="form-control bg-white border-0" id="name" name="name" value="<?= $name ?>" disabled required oninput="validateName(this)" />
+                      <label for="name">Name</label>
+                      <div class="invalid-feedback">
+                          Please provide a valid name
+                      </div>
+                  </div>
+                  <div class="form-floating">
+                      <input type="text" class="form-control bg-white border-0" id="username" name="username" value="<?= $username ?>" disabled required oninput="validateUsername(this)" />
+                      <label for="username">Username</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="email" class="form-control bg-white border-0" id="email" name="email" value="<?= $email ?>" disabled />
+                      <label for="email">Email</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="tel" class="form-control bg-white border-0" id="phone" name="phone" value="<?= $phone ?>" disabled />
+                      <label for="phone">Phone number</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="text" class="form-control bg-white border-0" id="commuting-method" name="commuting-method" value="<?= $commutingMethod ?>" disabled />
+                      <label for="commuting-method">Commuting method</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="text" class="form-control bg-white border-0" id="energy-source" name="energy-source" value="<?= $energySource ?>" disabled />
+                      <label for="energy-source">Energy source</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="text" class="form-control bg-white border-0" id="dietary-preference" name="dietary-preference" value="<?= $dietaryPreference ?>" disabled />
+                      <label for="dietary-preference">Dietary preference</label>
+                  </div>
+              </div>
+              <button id="btn" class="btn btn-dark w-100" type="button" onclick="editProfile(this)">Edit profile</button>
+          </form>
+      </div>
+  </div>
+  
     </main>
     <script src="../scripts/profile.js"></script>
     <script src="../scripts/feedback.js"></script>
