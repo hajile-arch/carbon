@@ -96,7 +96,9 @@
             onmouseleave="this.style.backgroundColor = 'white'"
           ></button>
           <ul class="dropdown-menu mt-2">
-            <a class="dropdown-item btn" href="event.php" target="_blank">Event</a>
+            <a class="dropdown-item btn" href="event.php" target="_blank"
+              >Event</a
+            >
             <button
               type="button"
               class="dropdown-item btn"
@@ -210,52 +212,141 @@
       class="border position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
       style="padding-top: 70px"
     >
-    <div class="w-75 d-flex shadow border">
-      <!-- Left -->
-      <div class="w-50 d-flex justify-content-center align-items-center">
-          <img src="../img/profile/pfp.svg" alt="pfp"/>
-      </div>
-      <!-- Right -->
-      <div class="w-50 d-flex justify-content-center align-items-center bg-secondary-subtle">
-          <form action="../api/profile-post.php" method="post" enctype="multipart/form-data" id="user-data" class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center">
-              <div class="d-flex flex-column gap-2 w-100">
-                  <div class="form-floating">
-                      <input type="text" class="form-control bg-white border-0" id="name" name="name" value="<?= $name ?>" disabled required oninput="validateName(this)" />
-                      <label for="name">Name</label>
-                      <div class="invalid-feedback">
-                          Please provide a valid name
-                      </div>
-                  </div>
-                  <div class="form-floating">
-                      <input type="text" class="form-control bg-white border-0" id="username" name="username" value="<?= $username ?>" disabled required oninput="validateUsername(this)" />
-                      <label for="username">Username</label>
-                  </div>
-                  <div class="form-floating">
-                      <input type="email" class="form-control bg-white border-0" id="email" name="email" value="<?= $email ?>" disabled />
-                      <label for="email">Email</label>
-                  </div>
-                  <div class="form-floating">
-                      <input type="tel" class="form-control bg-white border-0" id="phone" name="phone" value="<?= $phone ?>" disabled />
-                      <label for="phone">Phone number</label>
-                  </div>
-                  <div class="form-floating">
-                      <input type="text" class="form-control bg-white border-0" id="commuting-method" name="commuting-method" value="<?= $commutingMethod ?>" disabled />
-                      <label for="commuting-method">Commuting method</label>
-                  </div>
-                  <div class="form-floating">
-                      <input type="text" class="form-control bg-white border-0" id="energy-source" name="energy-source" value="<?= $energySource ?>" disabled />
-                      <label for="energy-source">Energy source</label>
-                  </div>
-                  <div class="form-floating">
-                      <input type="text" class="form-control bg-white border-0" id="dietary-preference" name="dietary-preference" value="<?= $dietaryPreference ?>" disabled />
-                      <label for="dietary-preference">Dietary preference</label>
-                  </div>
+      <div class="w-75 d-flex shadow border">
+        <!-- Left -->
+        <div class="w-50 d-flex justify-content-center align-items-center">
+          <img src="../img/profile/pfp.svg" alt="pfp" />
+        </div>
+        <!-- Right -->
+        <div
+          class="w-50 d-flex justify-content-center align-items-center bg-secondary-subtle"
+        >
+          <form
+            action="../api/profile-post.php"
+            method="post"
+            enctype="multipart/form-data"
+            id="user-data"
+            class="p-5 w-100 h-100 gap-4 form-floating d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="d-flex flex-column gap-2 w-100">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control bg-white border-0"
+                  id="name"
+                  name="name"
+                  value="<?= $name ?>"
+                  disabled
+                  required
+                  oninput="validateInput(this, /^[A-Za-z\s]+$/);"
+                />
+                <label for="name">Name</label>
+                <div class="invalid-feedback">Please provide a valid name</div>
               </div>
-              <button id="btn" class="btn btn-dark w-100" type="button" onclick="editProfile(this)">Edit profile</button>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control bg-white border-0"
+                  id="username"
+                  name="username"
+                  value="<?= $username ?>"
+                  disabled
+                  required
+                  oninput="validateInput(this, /^[a-z\d._-]+$/);"
+                />
+                <label for="username">Username</label>
+                <div class="invalid-feedback">
+                  Username must be lowercase without spacing containing only
+                  alphabets, numbers, and following the symbols: '.', '-', '_'
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control bg-white border-0"
+                  id="email"
+                  name="email"
+                  value="<?= $email ?>"
+                  disabled
+                />
+                <label for="email">Email</label>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="tel"
+                  class="form-control bg-white border-0"
+                  id="phone"
+                  name="phone"
+                  value="<?= $phone ?>"
+                  disabled
+                  required
+                  oninput="validateInput(this, /^[\d\s-]+$/)"
+                />
+                <label for="phone">Phone number</label>
+                <div class="invalid-feedback">
+                  Please enter your phone number using digits and "-" only
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control bg-white border-0"
+                  id="commuting-method"
+                  name="commuting-method"
+                  value="<?= $commutingMethod ?>"
+                  disabled
+                  required
+                  oninput="validateInput(this, /^[A-Za-z\s]+$/);"
+                />
+                <label for="commuting-method">Commuting method</label>
+                <div class="invalid-feedback">
+                  Please provide a valid commuting method
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control bg-white border-0"
+                  id="energy-source"
+                  name="energy-source"
+                  value="<?= $energySource ?>"
+                  disabled
+                  required
+                  oninput="validateInput(this, /^[A-Za-z\s]+$/);"
+                />
+                <label for="energy-source">Energy source</label>
+                <div class="invalid-feedback">
+                  Please provide a energy source
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control bg-white border-0"
+                  id="dietary-preference"
+                  name="dietary-preference"
+                  value="<?= $dietaryPreference ?>"
+                  disabled
+                  required
+                  oninput="validateInput(this, /^[A-Za-z\s]+$/);"
+                />
+                <label for="dietary-preference">Dietary preference</label>
+                <div class="invalid-feedback">
+                  Please provide a dietary preferance
+                </div>
+              </div>
+            </div>
+            <button
+              id="save-changes-btn"
+              class="btn btn-dark w-100"
+              type="button"
+              onclick="editProfile(this)"
+            >
+              Edit profile
+            </button>
           </form>
+        </div>
       </div>
-  </div>
-  
     </main>
     <script src="../scripts/profile.js"></script>
     <script src="../scripts/feedback.js"></script>
