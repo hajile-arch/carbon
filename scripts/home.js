@@ -1,3 +1,5 @@
+
+
 let prev_btn_state = "disabled";
 let next_btn_state = "disabled";
 let current_slide = 1;
