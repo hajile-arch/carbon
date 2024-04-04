@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +33,7 @@
   </head>
   <body style="height: 100dvh">
     <header
-      class="d-flex justify-content-between position-fixed w-100 z-1 border"
+      class="d-flex justify-content-between position-fixed w-100 z-1 border bg-white"
       style="height: 70px"
     >
       <a
@@ -237,13 +241,14 @@
           class="d-flex carousel carousel-dark slide rounded-5 mt-5 border border-5 overflow-hidden shadow needs-validation"
           style="width: 50%; background-color: white"
           action="../api/home-post.php"
+          onsubmit="console.log('submit')"
           method="POST"
         >
           <div class="carousel-inner" style="height: 60dvh">
             <!-- slide 0 -->
             <div class="carousel-item h-100 slide-0">
-              <div class="d-flex justify-content-center align-items-center border h-100 p-5">
-                <h1 class="display-1 fs-1">Good thing takes time, see you tomorrow!</h1>
+              <div class="d-flex justify-content-center align-items-center">
+                <h1>You've already submit the form today, come back tomorrow</h1>
               </div>
             </div>
 
@@ -556,7 +561,6 @@
         </form>
       </div>
     </main>
-    
     <script src="../scripts/home.js"></script>
     <script src="../scripts/feedback.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

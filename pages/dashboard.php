@@ -1,6 +1,6 @@
 <?php
 session_start()
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,17 +17,7 @@ session_start()
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-      .form-floating > .form-control:disabled ~ label::after,
-      .form-floating > :disabled ~ label::after {
-        background-color: transparent;
-      }
-      .form-floating > label {
-        margin-left: -1px;
-        z-index: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <header
@@ -200,7 +190,6 @@ session_start()
       <div class="d-flex">
         <div class="toast-body">Feedback submitted!</div>
         <button
-          id="btn"
           type="button"
           class="btn-close me-2 m-auto"
           data-bs-dismiss="toast"
@@ -208,13 +197,18 @@ session_start()
           onclick="closeToast()"
         ></button>
       </div>
-    </div> 
-    <main class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="padding-top: 70px">
-      <?php include '../api/profile-pull.php' ?>
+    </div>
+
+    <main
+      class="p-5 position-absolute w-100"
+      style="margin-top: 70px; height: calc(100% - 70px)"
+    >
+        <?php include '../api/dashboard-pull.php' ?>
     </main>
 
-    <script src="../scripts/profile.js"></script>
+    <script src="../scripts/dashboard.js"></script>
     <script src="../scripts/feedback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

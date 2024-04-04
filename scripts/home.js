@@ -179,3 +179,42 @@ function validationForEmptyField() {
     }
   }
 }
+
+$(document).ready(function() {
+  $.ajax({
+    url: '../api/home-pull.php',
+    type: 'GET',
+    success: function(data) {
+      console.log("Data: ", data)
+      if (data == "true") {
+        // If user has already entered data, disable the form
+        const slide_0 = document.querySelector(".slide-0")
+        slide_0.classList.add("active")
+        const slide_1 = document.querySelector(".slide-1")
+        slide_1.classList.remove("active")
+        const prev_btn = document.getElementById("prev-btn")
+        prev_btn.classList.add("d-none")
+        const next_btn = document.getElementById("next-btn")
+        next_btn.classList.add("d-none")
+      }
+    },
+    error: function() {
+      console.error('Error occurred while checking entry.');
+    }
+  });
+});
+
+// var xhr = new XMLHttpRequest();
+// xhr.onreadystatechange = function() {
+//     if (xhr.readyState === XMLHttpRequest.DONE) {
+//         if (xhr.status === 200) {
+//             var phpVariable = JSON.parse(xhr.responseText);
+//             console.log(phpVariable);
+//         } else {
+//             console.error('Error fetching data:', xhr.status);
+//         }
+//     }
+// };
+// xhr.open('GET', '../api/home-pull.php');
+// xhr.send();
+
