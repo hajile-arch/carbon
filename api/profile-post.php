@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -27,9 +28,11 @@ if ($conn->connect_error) {
 // } else {
 //     echo "Error: " . $sql . "<br>" . $conn->error;
 // }
+$email = $_SESSION["email"];
+
 $name = $_POST['name'];
 $username = $_POST['username'];
-$email = $_POST['email'];
+    
 $phone = $_POST['phone'];
 $commutingMethod = $_POST['commuting-method'];
 $energySource = $_POST['energy-source'];
@@ -55,3 +58,6 @@ if ($conn->query($sql) === TRUE) {
 }
 header("Location: ../pages/profile.php");
     exit;
+
+
+    

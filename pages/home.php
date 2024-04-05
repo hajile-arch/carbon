@@ -36,7 +36,7 @@ session_start()
       style="height: 70px"
     >
       <a
-        href="home.html"
+        href="home.php"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
         style="margin-left: 10px"
       >

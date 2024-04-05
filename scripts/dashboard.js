@@ -11,9 +11,18 @@ $(document).ready(async function () {
       data.monthlyOilBill * 113;
     const transportation = ((data.totalMileage / data.totalYear) * 0.79) + (data.numberOfFlights * 2750)
     const recyclingHabits = (data.recycleNewspaper == 'false' ? 184 : 0) + (data.recycleAluminiumAndTin == 'false' ? 166 : 0)
+    const totalCarbonFootprint = energyConsumption + transportation + recyclingHabits
 
     const doughnut = document.getElementById("doughnut");
     const doughnut_data = [energyConsumption, transportation, recyclingHabits];
+    
+    const totalCarbonFootprintSpan = document.getElementById("totalCarbonFootprintSpan");
+    const formattedTotalCarbonFootprint = new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(totalCarbonFootprint);
+    totalCarbonFootprintSpan.innerText = formattedTotalCarbonFootprint;
+    console.log(totalCarbonFootprint);
 
     new Chart(doughnut, {
       type: "doughnut",
@@ -82,7 +91,6 @@ $(document).ready(async function () {
       },
     });
 
-    console.log("inside", energyConsumption);
   } catch (error) {
     console.error("Error occurred while fetching data:", error);
   }

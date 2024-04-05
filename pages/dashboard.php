@@ -25,7 +25,7 @@ session_start()
       style="height: 70px"
     >
       <a
-        href="home.html"
+        href="home.php"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
         style="margin-left: 10px"
       >
@@ -89,7 +89,9 @@ session_start()
             onmouseleave="this.style.backgroundColor = 'white'"
           ></button>
           <ul class="dropdown-menu mt-2">
-            <a class="dropdown-item btn" href="event.php" target="_blank">Event</a>
+            <a class="dropdown-item btn" href="event.php" target="_blank"
+              >Event</a
+            >
             <button
               type="button"
               class="dropdown-item btn"
@@ -199,33 +201,24 @@ session_start()
       </div>
     </div>
 
-    <main
-      class="p-5 position-absolute w-100"
-      style="margin-top: 70px; height: calc(100% - 70px)"
+    <div
+      class="modal fade"
+      id="shareResult"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
     >
-      <div class="d-flex gap-3 h-100">
-        <!-- left -->
-        <div class="d-flex flex-column h-100 gap-3 w-50">
-          <!-- top left -->
-          <div
-            class="border p-5 rounded d-flex flex-column justify-content-center align-items-center gap-3"
-            style="height: 80%"
-          >
-            <h1 class="display-6 fs-6">Carbon Footprint for December 2024</h1>
-            <div
-              class="d-flex flex-column justify-content-center align-items-center w-100"
-            >
-              <p class="m-0">Carbon Footprint Distribution by Category</p>
-              <canvas id="doughnut"></canvas>
-            </div>
-            <p class="m-0">Total Carbon Footprint: 11,231</p>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <!-- bottom left -->
-          <div
-            class="border rounded d-flex flex-column justify-content-center align-items-center"
-            style="height: 20%"
-          >
-            <h1 class="display-6 fs-6 pb-2">Share Your Environmental Impact</h1>
+          <div class="modal-body">
             <div class="d-flex gap-4">
               <a
                 href="https://www.instagram.com/"
@@ -252,6 +245,49 @@ session_start()
                 ><i class="bi bi-twitter-x"></i
               ></a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main
+      class="p-5 position-absolute w-100"
+      style="margin-top: 70px; height: calc(100% - 70px)"
+    >
+      <div class="d-flex gap-3 h-100">
+        <!-- left -->
+        <div class="d-flex flex-column h-100 gap-3 w-50">
+          <!-- top left -->
+          <div
+            class="border p-5 rounded d-flex flex-column justify-content-center align-items-center gap-3"
+            style="height: 80%"
+          >
+            <h1 class="display-6 fs-6">Carbon Footprint for December 2024</h1>
+            <div
+              class="d-flex flex-column justify-content-center align-items-center w-100"
+            >
+              <p class="m-0">Carbon Footprint Distribution by Category</p>
+              <canvas id="doughnut"></canvas>
+            </div>
+            <p class="m-0">
+              Total Carbon Footprint:
+              <span id="totalCarbonFootprintSpan">0</span>
+            </p>
+          </div>
+          <!-- bottom left -->
+          <div
+            class="border rounded d-flex flex-column justify-content-center align-items-center px-5"
+            style="height: 20%"
+          >
+            <h1 class="display-6 fs-6 pb-2">Share Your Environmental Impact</h1>
+            <button
+              type="button"
+              class="btn btn-secondary w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#shareResult"
+            >
+              Share
+            </button>
           </div>
         </div>
         <!-- right -->
@@ -294,7 +330,7 @@ session_start()
         </div>
       </div>
     </main>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../scripts/dashboard.js?v=<?php echo time(); ?>"></script>
     <script src="../scripts/feedback.js?v=<?php echo time(); ?>"></script>
