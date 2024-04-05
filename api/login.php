@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $email;
             
-            header("Location: ../pages/home.html");
+            header("Location: ../pages/home.php");
             // Redirect to welcome page
             exit;
         } else {

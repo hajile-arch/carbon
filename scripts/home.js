@@ -189,7 +189,7 @@ $(document).ready(function() {
     success: function(data) {
       console.log("Data: ", data)
       if (data == "true") {
-        // If user has already entered data, disable the form
+        // If user has already entered data, disable form
         const slide_0 = document.querySelector(".slide-0")
         slide_0.classList.add("active")
         const slide_1 = document.querySelector(".slide-1")
@@ -200,23 +200,8 @@ $(document).ready(function() {
         next_btn.classList.add("d-none")
       }
     },
-    error: function() {
-      console.error('Error occurred while checking entry.');
+    error: function(e) {
+      console.error(e);
     }
   });
 });
-
-// var xhr = new XMLHttpRequest();
-// xhr.onreadystatechange = function() {
-//     if (xhr.readyState === XMLHttpRequest.DONE) {
-//         if (xhr.status === 200) {
-//             var phpVariable = JSON.parse(xhr.responseText);
-//             console.log(phpVariable);
-//         } else {
-//             console.error('Error fetching data:', xhr.status);
-//         }
-//     }
-// };
-// xhr.open('GET', '../api/home-pull.php');
-// xhr.send();
-

@@ -1,3 +1,6 @@
+<?php 
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,14 +57,14 @@
 
       <nav class="d-flex gap-3 align-items-center justify-content-between">
         <a
-          href="home.html"
+          href="home.php"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
           >Home</a
         >
         <a
-          href="dashboard.html"
+          href="dashboard.php"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
@@ -209,7 +212,7 @@
 
     <main class="h-100 d-flex justify-content-center align-items-center">
       <div class="d-flex justify-content-center align-items-center w-75">
-        <div class="d-flex flex-column gap-3" style="width: 50%">
+        <div class="d-flex flex-column gap-3 p-5" style="width: 50%">
           <h1
             class="display-3 fw-bolder z-1"
             style="font-family: choburi, serif"
@@ -557,8 +560,8 @@
       </div>
     </main>
     
-    <script src="../scripts/home.js"></script>
-    <script src="../scripts/feedback.js"></script>
+    <script src="../scripts/home.js?v=<?php echo time(); ?>"></script>
+    <script src="../scripts/feedback.js?v=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

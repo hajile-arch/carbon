@@ -56,14 +56,14 @@ session_start()
 
       <nav class="d-flex gap-3 align-items-center justify-content-between">
         <a
-          href="home.html"
+          href="home.php"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
           >Home</a
         >
         <a
-          href="dashboard.html"
+          href="dashboard.php"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
@@ -213,8 +213,8 @@ session_start()
       <?php include '../api/profile-pull.php' ?>
     </main>
 
-    <script src="../scripts/profile.js"></script>
-    <script src="../scripts/feedback.js"></script>
+    <script src="../scripts/profile.js?v=<?php echo time(); ?>"></script>
+    <script src="../scripts/feedback.js?v=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

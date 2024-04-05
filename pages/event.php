@@ -132,7 +132,7 @@
     <div class="p-5 w-100 h-100 d-flex flex-column gap-5">
       <?php include '../api/event-lists.php'; ?>
     </div>
-    <script src="../scripts/event.js"></script>
+    <script src="../scripts/event.js?v=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

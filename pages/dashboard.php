@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start()
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ session_start()
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <header
@@ -46,14 +46,14 @@ session_start()
 
       <nav class="d-flex gap-3 align-items-center justify-content-between">
         <a
-          href="home.html"
+          href="home.php"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
           >Home</a
         >
         <a
-          href="dashboard.html"
+          href="dashboard.php"
           class="nav-link"
           onmouseover="this.style.color='#198754'"
           onmouseout="this.style.color='#000'"
@@ -203,11 +203,101 @@ session_start()
       class="p-5 position-absolute w-100"
       style="margin-top: 70px; height: calc(100% - 70px)"
     >
-        <?php include '../api/dashboard-pull.php' ?>
+      <div class="d-flex gap-3 h-100">
+        <!-- left -->
+        <div class="d-flex flex-column h-100 gap-3 w-50">
+          <!-- top left -->
+          <div
+            class="border p-5 rounded d-flex flex-column justify-content-center align-items-center gap-3"
+            style="height: 80%"
+          >
+            <h1 class="display-6 fs-6">Carbon Footprint for December 2024</h1>
+            <div
+              class="d-flex flex-column justify-content-center align-items-center w-100"
+            >
+              <p class="m-0">Carbon Footprint Distribution by Category</p>
+              <canvas id="doughnut"></canvas>
+            </div>
+            <p class="m-0">Total Carbon Footprint: 11,231</p>
+          </div>
+          <!-- bottom left -->
+          <div
+            class="border rounded d-flex flex-column justify-content-center align-items-center"
+            style="height: 20%"
+          >
+            <h1 class="display-6 fs-6 pb-2">Share Your Environmental Impact</h1>
+            <div class="d-flex gap-4">
+              <a
+                href="https://www.instagram.com/"
+                class="link-secondary"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.threads.net/"
+                class="link-secondary"
+                target="_blank"
+                ><i class="bi bi-threads"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="link-secondary"
+                target="_blank"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://www.twitter.com/"
+                class="link-secondary"
+                target="_blank"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="d-flex flex-column w-100 h-100 gap-3">
+          <!-- top right -->
+          <div
+            class="border p-5 h-75 w-100 rounded d-flex flex-column justify-content-center align-items-center"
+          >
+            <div
+              class="w-100 d-flex justify-content-start align-items-center gap-4 ps-4"
+            >
+              <ul class="pagination m-0 d-flex gap-2">
+                <li class="page-item disabled">
+                  <button class="page-link text-secondary">
+                    <i class="bi bi-chevron-compact-left"></i>
+                  </button>
+                </li>
+                <li class="page-item">
+                  <button class="page-link text-secondary">
+                    <i class="bi bi-chevron-compact-right"></i>
+                  </button>
+                </li>
+              </ul>
+              <h1 class="display-6 fs-6 m-0">
+                Carbon Footprint Analysis for 2024 by Month
+              </h1>
+            </div>
+            <canvas id="bar-chart"></canvas>
+          </div>
+          <!-- bottom right -->
+          <div
+            class="border p-5 rounded h-50 d-flex flex-column justify-content-center align-items-center overflow-hidden"
+          >
+            <h3 class="display-6 fs-6">Recommendation</h3>
+            <p class="">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
-
-    <script src="../scripts/dashboard.js"></script>
-    <script src="../scripts/feedback.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/dashboard.js?v=<?php echo time(); ?>"></script>
+    <script src="../scripts/feedback.js?v=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
