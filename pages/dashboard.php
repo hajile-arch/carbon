@@ -201,16 +201,20 @@ session_start()
       </div>
     </div>
 
+    <!-- modal for share result -->
     <div
       class="modal fade"
       id="shareResult"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="shareResultLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
+            <h1 class="modal-title fs-5" id="shareResultLabel">
+              Share Your Environmental Impact
+            </h1>
             <button
               type="button"
               class="btn-close"
@@ -219,7 +223,10 @@ session_start()
             ></button>
           </div>
           <div class="modal-body">
-            <div class="d-flex gap-4">
+            Body content
+          </div>
+          <div class="modal-footer">
+            <div class="d-flex w-100 justify-content-center gap-4">
               <a
                 href="https://www.instagram.com/"
                 class="link-secondary"
