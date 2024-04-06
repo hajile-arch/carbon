@@ -38,7 +38,6 @@ function handleCategoryFilter(btn) {
     const list_of_categories =
       list_of_events[i].querySelectorAll(".categories");
     let shouldHide = true;
-
     for (let j = 0; j < list_of_categories.length; j++) {
       const category = list_of_categories[j].innerText.toLowerCase();
       if (category.includes(filteredCategory)) {
@@ -58,23 +57,19 @@ function handleDateFilter(btn) {
   const filteredDate = btn.textContent.toLowerCase().trim();
   const list_of_events = document.querySelectorAll(".event-ctn");
 
-  list_of_events.forEach((event) => {
-    const dateElement = event.querySelector(".date");
-    if (!dateElement) {
-      console.error("Date element not found in event:", event);
-      return;
-    }
-
-    const date = dateElement.textContent.toLowerCase();
+  for (i = 0; i < list_of_events.length; i++) {
+    const date = list_of_events[i].querySelector("#date");
     let shouldHide = true;
-    if (date.includes(filteredDate) || filteredDate === "") {
+    if (date.innerText.toLowerCase().trim() === filteredDate) {
       shouldHide = false;
     }
 
     if (shouldHide) {
-      event.classList.add("d-none");
+      list_of_events[i].classList.add("d-none");
     } else {
-      event.classList.remove("d-none");
+      list_of_events[i].classList.remove("d-none");
     }
-  });
+  }
+
+
 }

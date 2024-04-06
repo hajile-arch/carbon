@@ -17,6 +17,10 @@ if ($conn->connect_error) {
 $sql_select_events ="SELECT * FROM events";
 $result = $conn->query($sql_select_events);
 
+// $formattedDate = date("F j, Y", strtotime($date));
+
+
+
 if ($result->num_rows > 0) {
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
@@ -25,7 +29,7 @@ if ($result->num_rows > 0) {
         echo '<div class="card-body p-5">';
         echo '<h5 class="card-title">' . $row['title'] . '</h5>';
         echo '<p class="card-text text-body-tertiary">';
-        echo 'Date: ' . $row['date'] . '<br />';
+        echo 'Date: <span id="date">' . $row['date'] . '</span><br />';
         echo 'Time: ' . $row['time'] . '<br />';
         echo 'Location: ' . $row['location'] . '<br />';
         echo 'Organiser: ' . $row['organiser'];

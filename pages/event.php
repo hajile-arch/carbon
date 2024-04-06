@@ -50,87 +50,141 @@
         </div>
       </form>
       <!--  filter button group -->
-      <div class="dropdown">
-        <button
-          class="btn btn-outline-success dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Filter
-        </button>
-        <ul class="dropdown-menu p-0" style="width: 200px">
-          <div class="d-flex flex-column align-items-start">
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Environmental Cleanup
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Community Service
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Renewable Energy
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Seminar
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Gardening
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Sustainability
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Nature Exploration
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Conservation
-            </button>
-            <button
-              type="button"
-              class="btn w-100 text-start"
-              onclick="handleFilter(this)"
-            >
-              Waste Reduction
-            </button>
-          </div>
-        </ul>
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <!-- by category -->
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-success dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Category
+          </button>
+          <ul class="dropdown-menu p-0" style="width: 200px">
+            <div class="d-flex flex-column align-items-start">
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Environmental Cleanup
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Community Service
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Renewable Energy
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Seminar
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Gardening
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Sustainability
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Nature Exploration
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Conservation
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Waste Reduction
+              </button>
+            </div>
+          </ul>
+        </div>
+        <!-- by date -->
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-success dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Date
+          </button>
+          <ul class="dropdown-menu p-0" style="width: 200px">
+            <div class="d-flex flex-column align-items-start">
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                2024-04-20
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                2024-05-05
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                2024-06-15
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                2024-07-10
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                2024-08-20
+              </button>
+            </div>
+          </ul>
+        </div>
       </div>
     </div>
+
     <!-- list -->
     <div class="p-5 w-100 h-100 d-flex flex-column gap-5">
-      <?php include '../api/event-lists.php'; ?>
+      <?php include '../api/event-list.php'; ?>
     </div>
     <script src="../scripts/event.js?v=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
