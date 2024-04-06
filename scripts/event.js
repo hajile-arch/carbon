@@ -30,7 +30,7 @@ function search(e) {
   }
 }
 
-function handleFilter(btn) {
+function handleCategoryFilter(btn) {
   const filteredCategory = btn.innerText.toLowerCase();
   const list_of_events = document.querySelectorAll(".event-ctn");
 
@@ -52,4 +52,29 @@ function handleFilter(btn) {
       list_of_events[i].classList.remove("d-none");
     }
   }
+}
+
+function handleDateFilter(btn) {
+  const filteredDate = btn.textContent.toLowerCase().trim();
+  const list_of_events = document.querySelectorAll(".event-ctn");
+
+  list_of_events.forEach((event) => {
+    const dateElement = event.querySelector(".date");
+    if (!dateElement) {
+      console.error("Date element not found in event:", event);
+      return;
+    }
+
+    const date = dateElement.textContent.toLowerCase();
+    let shouldHide = true;
+    if (date.includes(filteredDate) || filteredDate === "") {
+      shouldHide = false;
+    }
+
+    if (shouldHide) {
+      event.classList.add("d-none");
+    } else {
+      event.classList.remove("d-none");
+    }
+  });
 }

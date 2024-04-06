@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="
+        height: 100dvh;
+        background-image: linear-gradient(
+            rgba(4, 9, 30, 0.3),
+            rgba(4, 9, 30, 0.3)
+          ),
+          url(../img/event/event-bg.jpg);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <h1 class="display-1 text-white text-center pt-5 pb-3">
+        Upcoming Events
+      </h1>
+    </div>
+
+    <div class="border d-flex justify-content-center align-items-center">
+      <!-- search bar -->
+      <form class="d-flex gap-3 p-5 w-50" onsubmit="search(event)">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="bi bi-search"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="searchForEvents"
+            placeholder="Search for events"
+          />
+        </div>
+      </form>
+      <!--  filter button group -->
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <!-- by category -->
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-success dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Category
+          </button>
+          <ul class="dropdown-menu p-0" style="width: 200px">
+            <div class="d-flex flex-column align-items-start">
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Environmental Cleanup
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Community Service
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Renewable Energy
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Seminar
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Gardening
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Sustainability
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Nature Exploration
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Conservation
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleCategoryFilter(this)"
+              >
+                Waste Reduction
+              </button>
+            </div>
+          </ul>
+        </div>
+        <!-- by date -->
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-success dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Date
+          </button>
+          <ul class="dropdown-menu p-0" style="width: 200px">
+            <div class="d-flex flex-column align-items-start">
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                April 20, 2024
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                May 5, 2024
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                June 15, 2024
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                July 10, 2024
+              </button>
+              <button
+                type="button"
+                class="btn w-100 text-start"
+                onclick="handleDateFilter(this)"
+              >
+                August 20, 2024
+              </button>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- list -->
+    <div class="p-5 w-100 h-100 d-flex flex-column gap-5">
+      <div
+        class="event-ctn card d-flex flex-row justify-content-center align-items-center rounded border shadow overflow-hidden"
+        style="height: 300px"
+      >
+        <img
+          src="../img/event/mock_image.jpg"
+          class="card-img-top rounded-0 object-fit-cover"
+          alt="Mock Image"
+          style="width: 40%"
+        />
+        <div class="card-body p-5">
+          <h5 class="card-title">Mock Event Title</h5>
+          <p class="card-text text-body-tertiary">
+            Date: <span id="date">June 15, 2024</span><br />
+            Time: 10:00 AM - 12:00 PM<br />
+            Location: Mock Location<br />
+            Organiser: Mock Organiser
+          </p>
+          <div class="d-flex gap-3 pb-4">
+            <div class="categories border p-1 px-2 rounded"># Category1</div>
+            <div class="categories border p-1 px-2 rounded"># Category2</div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-1"
+          >
+            See details
+          </button>
+          <div
+            class="modal fade"
+            id="modal-1"
+            tabindex="-1"
+            aria-labelledby="modal-1-label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="inner-card-title">Mock Event Title</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body d-flex justify-content-evenly">
+                  <div class="w-50">
+                    <h5 class="fw-semibold">Details</h5>
+                    <p class="card-text fs-6 text-body-secondary">
+                      Date: January 1, 2025<br />
+                      Time: 10:00 AM - 12:00 PM<br />
+                      Location: Mock Location<br />
+                      Organiser: Mock Organiser<br />
+                      Email: mock@example.com<br />
+                      Phone: +123456789
+                    </p>
+                  </div>
+                  <div class="w-50">
+                    <h5 class="fw-semibold">Description</h5>
+                    <p class="card-text fs-6 text-body-secondary">
+                      This is a mock event description. Lorem ipsum dolor sit
+                      amet, consectetur adipiscing elit. Sed eget urna nec arcu
+                      varius placerat. Vestibulum ante ipsum primis in faucibus
+                      orci luctus et ultrices posuere cubilia Curae; Curabitur
+                      sit amet lacus orci. Sed rhoncus sapien sit amet ultricies
+                      feugiat. Quisque volutpat turpis id eros tempor, at
+                      lacinia felis mollis. In hac habitasse platea dictumst.
+                      Nulla nec nisl felis. Nullam eu massa et arcu scelerisque
+                      suscipit ac id nunc.
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <a href="register.html">
+                    <button type="button" class="btn btn-primary">
+                      Sign Up
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/event.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
