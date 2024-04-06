@@ -117,7 +117,7 @@ echo '<label for="dietary-preference">Dietary preference</label>';
 echo '<div class="invalid-feedback">Please provide a dietary preference</div>';
 echo '</div>';
 echo '</div>';
-echo '<button id="save-changes-btn" class="btn btn-dark w-100" type="button" onclick="editProfile(this)">Edit profile</button>';
+echo '<button id="save-changes-btn" class="btn btn-dark w-100" type="button" onclick="editProfile(); saveChanges()">Edit profile</button>';
 echo '</form>';
 echo '</div>';
 echo '</div>';
