@@ -1,5 +1,11 @@
-<?php 
-session_start()
+<?php
+session_start();
+
+// Check if the user is logged in as admin
+$is_admin = false;
+if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
+    $is_admin = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +24,19 @@ session_start()
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
   </head>
   <body>
+  <?php if ($is_admin): ?>
+        <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
+    <?php endif; ?>
     <header
       class="d-flex justify-content-between position-fixed w-100 z-1 border bg-white"
       style="height: 70px"
     >
+    <?php if ($is_admin): ?>
+        <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
+    <?php endif; ?>
       <a
         href="home.php"
         class="d-flex justify-content-center align-items-center w-25 text-decoration-none"
@@ -336,8 +349,8 @@ session_start()
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../scripts/dashboard.js?v=<?php echo time(); ?>"></script>
-    <script src="../scripts/feedback.js?v=<?php echo time(); ?>"></script>
+    <script src="../scripts/dashboard.js? v= <?php echo time(); ?>"></script>
+    <script src="../scripts/feedback.js? v=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

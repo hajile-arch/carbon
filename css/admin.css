@@ -1,0 +1,19 @@
+
+/* Styling for admin button */
+.admin-btn {
+    position: fixed; /* Set position fixed */
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    width: 50px; /* Adjust button size */
+    height: 50px; /* Adjust button size */
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999; /* Ensure it appears above other content */
+  }

@@ -37,9 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $email;
             
-            header("Location: ../pages/home.php");
-            // Redirect to welcome page
-            exit;
+            if ($email === 'admin123@gmail.com') { // Replace with your admin email
+                // User is authenticated as an admin
+                $_SESSION['admin'] = true;
+                header("Location: ../pages/admin_dashboard.php"); // Redirect to admin dashboard
+                exit;
+            } else {
+                // Regular user, redirect to home page
+                header("Location: ../pages/event.php");
+                exit;
+            }
         } else {
             // Passwords do not match, authentication failed (ui)
             echo "Invalid email or password";

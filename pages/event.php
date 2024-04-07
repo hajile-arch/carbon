@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in as admin
+$is_admin = false;
+if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
+    $is_admin = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,8 +24,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="../css/admin.css" />
+
   </head>
   <body>
+  <?php if ($is_admin): ?>
+        <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
+    <?php endif; ?>
     <div
       class="d-flex justify-content-center align-items-center"
       style="
