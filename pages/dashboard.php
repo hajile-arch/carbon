@@ -223,7 +223,7 @@ session_start()
             ></button>
           </div>
           <div class="modal-body">
-            Body content
+            Content
           </div>
           <div class="modal-footer">
             <div class="d-flex w-100 justify-content-center gap-4">
@@ -269,7 +269,7 @@ session_start()
             class="border p-5 rounded d-flex flex-column justify-content-center align-items-center gap-3"
             style="height: 80%"
           >
-            <h1 class="display-6 fs-6">Carbon Footprint for December 2024</h1>
+            <h1 class="display-6 fs-6">Carbon Footprint for <span id="date"></span></h1>
             <div
               class="d-flex flex-column justify-content-center align-items-center w-100"
             >
@@ -329,10 +329,7 @@ session_start()
             class="border p-5 rounded h-50 d-flex flex-column justify-content-center align-items-center overflow-hidden"
           >
             <h3 class="display-6 fs-6">Recommendation</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p id="recommendationText" style="font-size: small;"></p>
           </div>
         </div>
       </div>

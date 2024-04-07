@@ -188,7 +188,7 @@ $(document).ready(function() {
     type: 'GET',
     success: function(data) {
       console.log("Data: ", data)
-      if (data == "true") {
+      if (data == "false") {
         // If user has already entered data, disable form
         const slide_0 = document.querySelector(".slide-0")
         slide_0.classList.add("active")

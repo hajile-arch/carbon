@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 $email = $_SESSION["email"];
 $currentDate = date("Y-m-d");
-$existingRecordQuery = "SELECT monthlyElectricBill, monthlyGasBill, monthlyOilBill, totalMileage, totalYear, numberOfFlights, recycleNewspaper, recycleAluminiumAndTin FROM home WHERE email LIKE ? AND date LIKE ?";
+$existingRecordQuery = "SELECT monthlyElectricBill, monthlyGasBill, monthlyOilBill, totalMileage, totalYear, numberOfFlights, recycleNewspaper, recycleAluminiumAndTin, date FROM home WHERE email LIKE ? AND date LIKE ?";
 $stmt = $conn->prepare($existingRecordQuery);
 $stmt->bind_param("ss", $email, $currentDate);
 $stmt->execute();
@@ -33,6 +33,7 @@ if ($result->num_rows == 1) {
     $response['numberOfFlights'] = $row['numberOfFlights'];
     $response['recycleNewspaper'] = $row['recycleNewspaper'];
     $response['recycleAluminiumAndTin'] = $row['recycleAluminiumAndTin'];
+    $response['date'] = $row['date'];
 } else {
     // Handle case where no data is found for the user
     // You can either set default values or display an error message
