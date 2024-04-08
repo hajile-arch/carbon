@@ -19,8 +19,6 @@ $result = $conn->query($sql_select_events);
 
 // $formattedDate = date("F j, Y", strtotime($date));
 
-
-
 if ($result->num_rows > 0) {
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
@@ -78,7 +76,6 @@ if ($result->num_rows > 0) {
         echo '<div class="modal-footer">';
         echo '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>';
         echo '<a href="register.html">';
-        echo '<button type="button" class="btn btn-primary">Sign Up</button>';
         echo '</a>';
         echo '</div>';
         echo '</div>';

@@ -1,4 +1,3 @@
-
 /* Styling for admin button */
 .admin-btn {
     position: fixed; /* Set position fixed */
@@ -16,4 +15,4 @@
     align-items: center;
     cursor: pointer;
     z-index: 999; /* Ensure it appears above other content */
-  }
+}

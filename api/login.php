@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
             } else {
                 // Regular user, redirect to home page
-                header("Location: ../pages/event.php");
+                header("Location: ../pages/home.php");
                 exit;
             }
         } else {

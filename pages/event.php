@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-// Check if the user is logged in as admin
-$is_admin = false;
-if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
-    $is_admin = true;
-}
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +23,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
 
   </head>
   <body>
-  <?php if ($is_admin): ?>
-        <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
-    <?php endif; ?>
+
     <div
       class="d-flex justify-content-center align-items-center"
       style="
