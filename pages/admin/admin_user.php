@@ -30,6 +30,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
       <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
     <?php endif; ?>
     <div class="border rounded p-5">
+      <h1 class="display-6">User Accounts</h1>
       <?php include '../../api/user-accounts.php' ?>
     </div>
 </body>

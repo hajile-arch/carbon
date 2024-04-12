@@ -21,7 +21,8 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
     <?php if ($is_admin): ?>
       <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
     <?php endif; ?>
-    <div class="border rounded p-5">
+    <div class="p-5 d-flex flex-column justify-content-center align-items-center">
+      <h1 class="display-6 w-100">Events</h1>
       <?php include '../../api/event-table.php' ?>
     </div>
 </body>

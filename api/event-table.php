@@ -13,12 +13,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Query to fetch all users from the database
-// TODO: elijah
-// $sql = ""; 
-// $result = $conn->query($sql);
+// Query to fetch all events from the database
+$sql = "SELECT title, date, time, location, organiser FROM events";
+$result = $conn->query($sql);
 
-if (true) { //TODO: elijah
+if ($result->num_rows > 0) {
     echo "<table class='table table-striped'>";
     echo "<thead>";
     echo "<tr>";
@@ -26,23 +25,21 @@ if (true) { //TODO: elijah
     echo "<th scope='col'>Date</th>";
     echo "<th scope='col'>Time</th>";
     echo "<th scope='col'>Location</th>";
-    echo "<th scope='col'>Organizer</th>";
+    echo "<th scope='col'>Organiser</th>";
     echo "<th scope='col'>Actions</th>";
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";
-    
-    $x = 0;
-    while ($x != 5) { //TODO: elijah
-        $x++;
+
+    while ($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<th scope='row'>$x</th>";
-        echo "<td>date $x</td>";
-        echo "<td>time $x</td>";
-        echo "<td>location $x</td>";
-        echo "<td>organizer $x</td>";
+        echo "<td>" . $row['title'] . "</td>";
+        echo "<td>" . $row['date'] . "</td>";
+        echo "<td>" . $row['time'] . "</td>";
+        echo "<td>" . $row['location'] . "</td>";
+        echo "<td>" . $row['organiser'] . "</td>";
         echo "<td>";
-        echo "<a href='_delete_event.php?' class='link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'>Delete</a>";
+        echo "<a href='_delete_event.php?id=" . $row['title'] . "' class='link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'>Delete</a>";
         echo "</td>";
         echo "</tr>";
     }

@@ -30,7 +30,7 @@
   </style>
 </head>
 <body class="bg-body-secondary d-flex flex-column justify-content-center align-items-center gap-2 border-1" style="height: 100dvh;">
-  <a href="admin_event.php">Event</a>
+  <a href="admin_event.php">Events</a>
   <a href="admin_user.php">User Accounts</a>
   <a href="../login.html">Logout</a>
   <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>

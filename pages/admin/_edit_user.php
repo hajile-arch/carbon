@@ -73,24 +73,26 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="admin.css" />
 </head>
 <body class="d-flex justify-content-center align-items-center" style="height: 100dvh;">
-    <form method="post" class="border p-5 gap-4 rounded d-flex flex-column justify-content-center align-items-center w-50">
+    <form method="post" class="needs-validation border p-5 gap-4 rounded d-flex flex-column justify-content-center align-items-center w-50" novalidate>
       <h1 class="display-6">Edit User</h1> 
       <div class="form-floating w-100">
-        <input type="text" class="form-control" id="email" name="email" placeholder="email" value="<?php echo $row['email']; ?>">
+        <input disabled type="text" class="form-control" id="email" name="email" placeholder="email" value="<?php echo $row['email']; ?>">
         <label for="email">Email</label>
       </div>
       <div class="form-floating w-100">
-        <input type="text" class="form-control" id="password" name="password" placeholder="password">
-        <label for="password">Password</label> 
+        <input required type="text" class="form-control" id="password" name="password" placeholder="password">
+        <label for="password">Password</label>
+        <div class="invalid-feedback">Please provide a password</div>
       </div>
       <div class="d-flex w-100 gap-4">
-          <button type="submit" class="btn btn-outline-dark w-50">
+          <button id="update" type="submit" class="btn btn-outline-dark w-50">
             Update
           </button>
           <a href="admin_user.php" class="btn btn-outline-secondary w-50">Cancel</a>
       </div>
     </form>
     <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
+    <script src="../../scripts/admin/_edit_user.js"></script>
 </body>
 </html>
 

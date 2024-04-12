@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($email === 'admin123@gmail.com') { // Replace with your admin email
                 // User is authenticated as an admin
                 $_SESSION['admin'] = true;
-                header("Location: ../pages/admin_dashboard.php"); // Redirect to admin dashboard
+                header("Location: ../pages/admin/admin_dashboard.php"); // Redirect to admin dashboard
                 exit;
             } else {
                 // Regular user, redirect to home page
