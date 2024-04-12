@@ -49,7 +49,7 @@ $sql_create = "CREATE TABLE IF NOT EXISTS home (
 if ($conn->query($sql_create) === TRUE) {
     if ($conn->query($sql_insert) === TRUE) {
         // If insertion is successful, redirect to dashboard
-        header("Location: ../pages/dashboard.html");
+        header("Location: ../pages/dashboard.php");
         exit;
     } else {
         echo "Error inserting record: " . $conn->error;

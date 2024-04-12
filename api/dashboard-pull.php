@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 
 $email = $_SESSION["email"];
 $currentDate = date("Y-m-d");
+//TODO: extract all data with filtering date
 $existingRecordQuery = "SELECT monthlyElectricBill, monthlyGasBill, monthlyOilBill, totalMileage, totalYear, numberOfFlights, recycleNewspaper, recycleAluminiumAndTin, date FROM home WHERE email LIKE ? AND date LIKE ?";
 $stmt = $conn->prepare($existingRecordQuery);
 $stmt->bind_param("ss", $email, $currentDate);
@@ -23,6 +24,7 @@ $result = $stmt->get_result();
 
 $response = array();
 
+//TODO: create a for loop to check which date is the latest
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $response['monthlyElectricBill'] = $row['monthlyElectricBill'];

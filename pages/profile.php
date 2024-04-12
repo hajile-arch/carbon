@@ -37,9 +37,6 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
     </style>
   </head>
   <body>
-  <?php if ($is_admin): ?>
-        <a href="admin_dashboard.php" class="admin-btn"><i class="bi bi-person"></i></a>
-    <?php endif; ?>
     <header
       class="d-flex justify-content-between position-fixed w-100 z-1 border bg-white"
       style="height: 70px"
