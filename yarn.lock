@@ -7,6 +7,11 @@ bootstrap@5.3.3:
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.3.3.tgz#de35e1a765c897ac940021900fcbb831602bac38"
   integrity sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==
 
+fullpage.js@^4.0.22:
+  version "4.0.22"
+  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-4.0.22.tgz#8237d457e6e6c6583e85a767312a1fb341c2d9bb"
+  integrity sha512-8CCRrL8DwoFIDcBifvB0YfZZV63vUjairLsBX/uuOSsFa3gPS1Or4bLm2llFojL091MINMPzwdzTgbIO5iDdKw==
+
 popper.js@^2.0.0-next.4:
   version "2.0.0-next.4"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-2.0.0-next.4.tgz#8476d4b21407751a3a5069fa0e20f5cae9326c4b"

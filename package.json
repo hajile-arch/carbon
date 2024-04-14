@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "5.3.3",
+    "fullpage.js": "^4.0.22",
     "popper.js": "^2.0.0-next.4"
   }
 }
