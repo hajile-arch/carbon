@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -225,7 +224,13 @@ session_start();
             ></button>
           </div>
           <div class="modal-body">
-            Content
+            <p>Energy consumption: <span id="energyConsumptionSpan">0</span></p>
+            <p>Transportation: <span id="transportationSpan">0</span></p>
+            <p>Recycling habits: <span id="recyclingHabitsSpan">0</span></p>
+            <p>
+              Total Carbon Footprint:
+              <span class="totalCarbonFootprintSpan">0</span>
+            </p>
           </div>
           <div class="modal-footer">
             <div class="d-flex w-100 justify-content-center gap-4">
@@ -280,7 +285,7 @@ session_start();
             </div>
             <p class="m-0">
               Total Carbon Footprint:
-              <span id="totalCarbonFootprintSpan">0</span>
+              <span class="totalCarbonFootprintSpan">0</span>
             </p>
           </div>
           <!-- bottom left -->
@@ -309,19 +314,19 @@ session_start();
               class="w-100 d-flex justify-content-start align-items-center gap-4 ps-4"
             >
               <ul class="pagination m-0 d-flex gap-2">
-                <li class="page-item disabled">
-                  <button class="page-link text-secondary">
-                    <i class="bi bi-chevron-compact-left"></i>
+                <li class="page-item">
+                  <button class="page-link text-secondary prev">
+                    <i class="bi bi-chevron-compact-left pe-none"></i>
                   </button>
                 </li>
                 <li class="page-item">
-                  <button class="page-link text-secondary">
-                    <i class="bi bi-chevron-compact-right"></i>
+                  <button class="page-link text-secondary next">
+                    <i class="bi bi-chevron-compact-right pe-none"></i>
                   </button>
                 </li>
               </ul>
               <h1 class="display-6 fs-6 m-0">
-                Carbon Footprint Analysis for 2024 by Month
+                Carbon Footprint Analysis for <span id="selectedYear">0</span> by Month
               </h1>
             </div>
             <canvas id="bar-chart"></canvas>

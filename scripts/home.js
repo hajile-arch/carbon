@@ -73,7 +73,6 @@ function getBtnState(active) {
   if (slide) {
     prev_btn_state = slide.getAttribute("data-prev-btn-state");
     next_btn_state = slide.getAttribute("data-next-btn-state");
-    console.log(prev_btn_state, next_btn_state);
     setBtnAttribute();
     setProgress(slide);
   }
@@ -167,7 +166,6 @@ function yearlyMileageValidation() {
 function validationForEmptyField() {
   const current_input = document.querySelector(".active input");
   if (current_input.getAttribute("type") == "number") {
-    console.log(current_input);
     if (current_input.value == null || input.value == "") {
       current_input.className = current_input.className.replace(
         "form-control",
@@ -183,12 +181,11 @@ function validationForEmptyField() {
 }
 
 $(document).ready(function() {
-  $.ajax({
+  $.ajax({ 
     url: '../api/home-pull.php',
     type: 'GET',
     success: function(data) {
-      console.log("Data: ", data)
-      if (data == "false") {
+      if (data == "true") {
         // If user has already entered data, disable form
         const slide_0 = document.querySelector(".slide-0")
         slide_0.classList.add("active")

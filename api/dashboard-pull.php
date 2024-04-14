@@ -14,37 +14,50 @@ if ($conn->connect_error) {
 }
 
 $email = $_SESSION["email"];
-$currentDate = date("Y-m-d");
-//TODO: extract all data with filtering date
-$existingRecordQuery = "SELECT monthlyElectricBill, monthlyGasBill, monthlyOilBill, totalMileage, totalYear, numberOfFlights, recycleNewspaper, recycleAluminiumAndTin, date FROM home WHERE email LIKE ? AND date LIKE ?";
-$stmt = $conn->prepare($existingRecordQuery);
-$stmt->bind_param("ss", $email, $currentDate);
-$stmt->execute();
-$result = $stmt->get_result();
 
-$response = array();
+// Fetch the latest record for the user
+$latestRecordQuery = "SELECT monthlyElectricBill, monthlyGasBill, monthlyOilBill, 
+totalMileage, totalYear, numberOfFlights, recycleNewspaper, recycleAluminiumAndTin, 
+date FROM home WHERE email LIKE ? ORDER BY date DESC LIMIT 1";
 
-//TODO: create a for loop to check which date is the latest
-if ($result->num_rows == 1) {
-    $row = $result->fetch_assoc();
-    $response['monthlyElectricBill'] = $row['monthlyElectricBill'];
-    $response['monthlyGasBill'] = $row['monthlyGasBill'];
-    $response['monthlyOilBill'] = $row['monthlyOilBill'];
-    $response['totalMileage'] = $row['totalMileage'];
-    $response['totalYear'] = $row['totalYear'];
-    $response['numberOfFlights'] = $row['numberOfFlights'];
-    $response['recycleNewspaper'] = $row['recycleNewspaper'];
-    $response['recycleAluminiumAndTin'] = $row['recycleAluminiumAndTin'];
-    $response['date'] = $row['date'];
+$stmtLatest = $conn->prepare($latestRecordQuery);
+$stmtLatest->bind_param("s", $email);
+$stmtLatest->execute();
+$resultLatest = $stmtLatest->get_result();
+
+$latestRecord = array();
+
+if ($resultLatest->num_rows == 1) {
+    $latestRecord = $resultLatest->fetch_assoc();
 } else {
-    // Handle case where no data is found for the user
-    // You can either set default values or display an error message
-    $response['error'] = "No data found for the user";
+    $latestRecord = "No records found";
 }
 
-// Close the statement
-$stmt->close();
+// Close the statement for the latest record
+$stmtLatest->close();
 
-// Output the response as JSON
-echo json_encode($response);
+// Fetch all records for the user
+$allRecordsQuery = "SELECT monthlyElectricBill, monthlyGasBill, monthlyOilBill, 
+totalMileage, totalYear, numberOfFlights, recycleNewspaper, recycleAluminiumAndTin, 
+date FROM home WHERE email LIKE ?";
+
+$stmtAll = $conn->prepare($allRecordsQuery);
+$stmtAll->bind_param("s", $email);
+$stmtAll->execute();
+$resultAll = $stmtAll->get_result();
+
+$allRecords = array();
+
+while ($row = $resultAll->fetch_assoc()) {
+    $allRecords[] = $row;
+}
+
+// Close the statement for all records
+$stmtAll->close();
+
+// Close the connection
+$conn->close();
+
+// Output the latest record and all records as JSON
+echo json_encode(array('latestRecord' => $latestRecord, 'allRecords' => $allRecords));
 ?>
