@@ -1,123 +1,106 @@
-# 🍵 Kopitiam Management System
+# 🌱 Carbon Footprint Tracking Platform
 
-A modern web-based platform for managing traditional coffee shop operations, featuring online ordering, secure payments, and comprehensive admin controls.
+A beginner-friendly web application designed to help users track and visualize their carbon footprint. Built as a first-year coding project focusing on environmental awareness and data visualization.
 
-![GitHub](https://img.shields.io/github/license/hajile-7/Assignment2)
-![XAMPP](https://img.shields.io/badge/XAMPP-v7.4+-orange)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7F?style=for-the-badge&logo=bootstrap&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+## 📱 Screenshots
+
+[Place your application screenshots here]
 
 ## ✨ Features
 
-- 🛒 **Online Ordering**
-  - Digital menu browsing
-  - Real-time cart updates
-  - Streamlined checkout process
+- 📊 **Track Carbon Emissions**
+  - Log daily activities
+  - Calculate carbon impact
+  - View historical data
 
-- 💳 **Secure Payments**
-  - Stripe integration
-  - Multiple payment methods
-  - Encrypted transactions
+- 📈 **Data Visualization**
+  - Visual representations of carbon usage
+  - Progress tracking over time
+  - Easy-to-understand metrics
 
-- 📱 **Responsive Design**
-  - Mobile-optimized interface
-  - Cross-platform compatibility
-  - Intuitive user experience
+- 🎨 **User-Friendly Interface**
+  - Bootstrap-powered responsive design
+  - Clean and intuitive layout
+  - Mobile-friendly views
 
-- ⚙️ **Admin Dashboard**
-  - Order management
-  - Inventory control
-  - Analytics reporting
-
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
-
-- XAMPP (v7.4 or higher)
-- Web browser (Chrome, Firefox, or Safari recommended)
-- Stripe API keys
+- XAMPP or similar local server environment
+- Web browser
+- Basic understanding of PHP and MySQL
 
 ### Installation
 
-1. Clone the repo
-   ```bash
-   git clone https://github.com/hajile-7/Assignment2.git
-   ```
+1. Clone the repository
+```bash
+git clone https://github.com/rikashi-shifu/carbon.git
+```
 
-2. Set up XAMPP
-   - Install XAMPP from [official website](https://www.apachefriends.org/)
-   - Start Apache and MySQL services from XAMPP Control Panel
+2. Set up your local environment
+- Place the project folder in your XAMPP `htdocs` directory
+- Start Apache and MySQL services in XAMPP
 
-3. Project Setup
-   - Copy project folder to `xampp/htdocs/` directory
-   - Create database using phpMyAdmin
-   - Import database file from `database/kopitiam.sql`
+3. Database Setup
+- Create a new MySQL database named `carbon_footprint`
+- Import the database structure from `database/carbon_footprint.sql`
 
-4. Configuration
-   - Update database credentials in `config/database.php`
-   - Configure Stripe API keys in payment settings
+4. Access the Application
+- Open your web browser
+- Navigate to `http://localhost/carbon`
 
-5. Access Application
-   - Open web browser
-   - Navigate to `http://localhost/Assignment2`
+## 💻 Technologies Used
 
-## 💻 Tech Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript
 - **Backend**: PHP
-- **Database**: MySQL (via XAMPP)
+- **Frontend**: 
+  - Bootstrap for responsive design
+  - Custom CSS for styling
+- **Database**: MySQL
 - **Server**: Apache (via XAMPP)
-- **Payments**: Stripe API
 
-## 📖 Documentation
+## 🌟 Learning Outcomes
 
-### For Customers
-- Browse menu items
-- Add to cart
-- Complete checkout with Stripe
+This project helped develop skills in:
+- Backend development with PHP
+- Frontend design principles
+- Database management
+- Environmental impact calculation
+- Data visualization techniques
 
-### For Administrators
-- Access admin panel at `http://localhost/Assignment2/admin`
-- Default admin credentials:
-  - Username: `admin`
-  - Password: `password123`
-- Manage orders
-- Update menu
-- View analytics
+## 🔄 Future Improvements
 
-## 🔧 Troubleshooting
-
-Common issues and solutions:
-- **Database Connection Error**: Verify database credentials in config file
-- **404 Error**: Ensure project folder is in correct htdocs directory
-- **XAMPP Services**: Confirm both Apache and MySQL are running
-- **Permission Issues**: Check folder permissions in htdocs
+- [ ] Add user authentication system
+- [ ] Implement more detailed analytics
+- [ ] Create mobile app version
+- [ ] Add social sharing features
+- [ ] Include more carbon calculation factors
 
 ## 🤝 Contributing
 
-1. Fork it
-2. Create feature branch
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-3. Commit changes
-   ```bash
-   git commit -m 'Add YourFeature'
-   ```
-4. Push to branch
-   ```bash
-   git push origin feature/YourFeature
-   ```
-5. Create Pull Request
+This was a learning project, but contributions are welcome! Feel free to:
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
 
 ## 📝 License
 
-MIT License - see [`LICENSE.md`](LICENSE.md)
+This project is open source and available under the [MIT License](LICENSE).
 
-## 🆘 Support
+## 👨‍💻 Co-Author
 
-Need help? 
-- 📧 Email: support@kopitiam.com
-- 🐛 Issues: Submit via GitHub Issues
-- 💬 Discussions: Use GitHub Discussions tab
+Rikashi Shifu
+- GitHub: [@rikashi-shifu](https://github.com/rikashi-shifu)
+
+## 🙏 Acknowledgments
+
+- Thanks to all online tutorials and resources that helped in learning
+- Bootstrap documentation for UI guidance
+- XAMPP for local development environment
 
 ---
-Made with ☕ by [hajile-7](https://github.com/hajile-7)
+*This project was created as part of a first-year coding learning experience. While it may not be perfect, it represents significant learning and growth in web development skills.*
